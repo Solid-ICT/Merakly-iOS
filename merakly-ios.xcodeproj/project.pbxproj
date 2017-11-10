@@ -11,6 +11,8 @@
 		4A8B0C421FB5738700485900 /* merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8B0C381FB5738700485900 /* merakly_ios.framework */; };
 		4A8B0C471FB5738700485900 /* merakly_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C461FB5738700485900 /* merakly_iosTests.swift */; };
 		4A8B0C491FB5738700485900 /* merakly_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8B0C3B1FB5738700485900 /* merakly_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C531FB58C9900485900 /* MRKBannerView.swift */; };
+		4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B0C551FB58CA300485900 /* MRKBannerView.xib */; };
 		5A715FC6708A3A6C78B4298D /* Pods_merakly_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		4A8B0C411FB5738700485900 /* merakly-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "merakly-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B0C461FB5738700485900 /* merakly_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = merakly_iosTests.swift; sourceTree = "<group>"; };
 		4A8B0C481FB5738700485900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A8B0C531FB58C9900485900 /* MRKBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKBannerView.swift; sourceTree = "<group>"; };
+		4A8B0C551FB58CA300485900 /* MRKBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKBannerView.xib; sourceTree = "<group>"; };
 		4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.release.xcconfig"; sourceTree = "<group>"; };
 		7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +87,7 @@
 		4A8B0C3A1FB5738700485900 /* merakly-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4A8B0C521FB58C5F00485900 /* MRKBannerView */,
 				4A8B0C3B1FB5738700485900 /* merakly_ios.h */,
 				4A8B0C3C1FB5738700485900 /* Info.plist */,
 			);
@@ -96,6 +101,15 @@
 				4A8B0C481FB5738700485900 /* Info.plist */,
 			);
 			path = "merakly-iosTests";
+			sourceTree = "<group>";
+		};
+		4A8B0C521FB58C5F00485900 /* MRKBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B0C531FB58C9900485900 /* MRKBannerView.swift */,
+				4A8B0C551FB58CA300485900 /* MRKBannerView.xib */,
+			);
+			path = MRKBannerView;
 			sourceTree = "<group>";
 		};
 		697E435ED9268A0725080656 /* Frameworks */ = {
@@ -185,6 +199,7 @@
 				TargetAttributes = {
 					4A8B0C371FB5738700485900 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					4A8B0C401FB5738700485900 = {
@@ -216,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1C52D23651AF849A521AA07 /* Pods-merakly-ios.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -472,6 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.solidict.merakly-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -503,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88MUA8FE52;
 				INFOPLIST_FILE = "merakly-iosTests/Info.plist";
@@ -518,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88MUA8FE52;
 				INFOPLIST_FILE = "merakly-iosTests/Info.plist";
