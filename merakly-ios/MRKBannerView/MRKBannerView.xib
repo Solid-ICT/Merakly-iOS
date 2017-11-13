@@ -29,7 +29,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cym-Us-MEV">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                            <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="adButtonTapped:" destination="-1" eventType="touchUpInside" id="Meb-fh-OJV"/>
                             </connections>
@@ -52,8 +51,11 @@
                                 <segment title="First"/>
                                 <segment title="Second"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlValueDidChange:" destination="-1" eventType="valueChanged" id="MOY-JM-Weg"/>
+                            </connections>
                         </segmentedControl>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2c-PUz">
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2c-PUz">
                             <rect key="frame" x="150" y="40" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>

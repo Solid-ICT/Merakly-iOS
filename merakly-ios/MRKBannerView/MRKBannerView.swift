@@ -23,9 +23,14 @@ class MRKBannerView: UIView {
     
     @IBAction func adButtonTapped(_ sender: Any) {
         
-        print("HELLOOOOOOOOOOOOOOO")
+    }
+    
+    @IBAction func segmentedControlValueDidChange(_ sender: Any) {
+        
+        print(answersSegmentedControl.selectedSegmentIndex)
         
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
