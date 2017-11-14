@@ -8,6 +8,8 @@ target 'merakly-ios' do
   # Pods for merakly-ios
 
 pod ‘Alamofire’
+pod ‘Marshal’
+pod ‘SDWebImage’
 
   target 'merakly-iosTests' do
     inherit! :search_paths

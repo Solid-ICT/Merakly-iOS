@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		24C4CA86B531DCB827CC9137 /* Pods_merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */; };
+		4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75990D1FBAB35600DC7933 /* MRKModals.swift */; };
 		4A8B0C421FB5738700485900 /* merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8B0C381FB5738700485900 /* merakly_ios.framework */; };
 		4A8B0C471FB5738700485900 /* merakly_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C461FB5738700485900 /* merakly_iosTests.swift */; };
 		4A8B0C491FB5738700485900 /* merakly_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8B0C3B1FB5738700485900 /* merakly_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C531FB58C9900485900 /* MRKBannerView.swift */; };
 		4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B0C551FB58CA300485900 /* MRKBannerView.xib */; };
+		4ADFCBBB1FBACBEA00859678 /* MRKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */; };
 		5A715FC6708A3A6C78B4298D /* Pods_merakly_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A75990D1FBAB35600DC7933 /* MRKModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKModals.swift; sourceTree = "<group>"; };
 		4A8B0C381FB5738700485900 /* merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B0C3B1FB5738700485900 /* merakly_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = merakly_ios.h; sourceTree = "<group>"; };
 		4A8B0C3C1FB5738700485900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		4A8B0C481FB5738700485900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A8B0C531FB58C9900485900 /* MRKBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKBannerView.swift; sourceTree = "<group>"; };
 		4A8B0C551FB58CA300485900 /* MRKBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKBannerView.xib; sourceTree = "<group>"; };
+		4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKUtils.swift; sourceTree = "<group>"; };
 		4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.release.xcconfig"; sourceTree = "<group>"; };
 		7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A75990C1FBAB34300DC7933 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A75990D1FBAB35600DC7933 /* MRKModals.swift */,
+				4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4A8B0C2E1FB5738700485900 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 		4A8B0C3A1FB5738700485900 /* merakly-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4A75990C1FBAB34300DC7933 /* Supporting Files */,
 				4A8B0C521FB58C5F00485900 /* MRKBannerView */,
 				4A8B0C3B1FB5738700485900 /* merakly_ios.h */,
 				4A8B0C3C1FB5738700485900 /* Info.plist */,
@@ -286,10 +300,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Marshal/Marshal.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Marshal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -336,7 +354,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */,
 				4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */,
+				4ADFCBBB1FBACBEA00859678 /* MRKUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +506,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "merakly-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.solidict.merakly-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -510,6 +531,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "merakly-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.solidict.merakly-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
