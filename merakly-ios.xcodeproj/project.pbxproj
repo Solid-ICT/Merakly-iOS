@@ -15,6 +15,13 @@
 		4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C531FB58C9900485900 /* MRKBannerView.swift */; };
 		4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B0C551FB58CA300485900 /* MRKBannerView.xib */; };
 		4ADFCBBB1FBACBEA00859678 /* MRKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */; };
+		4ADFCBBF1FBAD51100859678 /* MRKSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBBD1FBAD51100859678 /* MRKSurveyViewController.swift */; };
+		4ADFCBC01FBAD51100859678 /* MRKSurveyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFCBBE1FBAD51100859678 /* MRKSurveyViewController.xib */; };
+		4ADFCBC41FBADCE200859678 /* MRKSurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC21FBADCE200859678 /* MRKSurveyCollectionViewCell.swift */; };
+		4ADFCBC51FBADCE200859678 /* MRKSurveyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC31FBADCE200859678 /* MRKSurveyCollectionViewCell.xib */; };
+		4ADFCBC71FBAF90800859678 /* MRKReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC61FBAF90800859678 /* MRKReusable.swift */; };
+		4ADFCBCA1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */; };
+		4ADFCBCB1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */; };
 		5A715FC6708A3A6C78B4298D /* Pods_merakly_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +47,13 @@
 		4A8B0C531FB58C9900485900 /* MRKBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKBannerView.swift; sourceTree = "<group>"; };
 		4A8B0C551FB58CA300485900 /* MRKBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKBannerView.xib; sourceTree = "<group>"; };
 		4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKUtils.swift; sourceTree = "<group>"; };
+		4ADFCBBD1FBAD51100859678 /* MRKSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKSurveyViewController.swift; sourceTree = "<group>"; };
+		4ADFCBBE1FBAD51100859678 /* MRKSurveyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKSurveyViewController.xib; sourceTree = "<group>"; };
+		4ADFCBC21FBADCE200859678 /* MRKSurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKSurveyCollectionViewCell.swift; sourceTree = "<group>"; };
+		4ADFCBC31FBADCE200859678 /* MRKSurveyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKSurveyCollectionViewCell.xib; sourceTree = "<group>"; };
+		4ADFCBC61FBAF90800859678 /* MRKReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKReusable.swift; sourceTree = "<group>"; };
+		4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKSurveyQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKSurveyQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.release.xcconfig"; sourceTree = "<group>"; };
 		7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +87,7 @@
 			children = (
 				4A75990D1FBAB35600DC7933 /* MRKModals.swift */,
 				4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */,
+				4ADFCBC61FBAF90800859678 /* MRKReusable.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -100,8 +115,9 @@
 		4A8B0C3A1FB5738700485900 /* merakly-ios */ = {
 			isa = PBXGroup;
 			children = (
-				4A75990C1FBAB34300DC7933 /* Supporting Files */,
+				4ADFCBBC1FBAD4F400859678 /* Survey */,
 				4A8B0C521FB58C5F00485900 /* MRKBannerView */,
+				4A75990C1FBAB34300DC7933 /* Supporting Files */,
 				4A8B0C3B1FB5738700485900 /* merakly_ios.h */,
 				4A8B0C3C1FB5738700485900 /* Info.plist */,
 			);
@@ -124,6 +140,43 @@
 				4A8B0C551FB58CA300485900 /* MRKBannerView.xib */,
 			);
 			path = MRKBannerView;
+			sourceTree = "<group>";
+		};
+		4ADFCBBC1FBAD4F400859678 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				4ADFCBBD1FBAD51100859678 /* MRKSurveyViewController.swift */,
+				4ADFCBBE1FBAD51100859678 /* MRKSurveyViewController.xib */,
+				4ADFCBC11FBADC9800859678 /* UICollectionView Files */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		4ADFCBC11FBADC9800859678 /* UICollectionView Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ADFCBCC1FBAFCF700859678 /* CollectionViewCell */,
+				4ADFCBCD1FBAFD0500859678 /* TableViewCell */,
+			);
+			path = "UICollectionView Files";
+			sourceTree = "<group>";
+		};
+		4ADFCBCC1FBAFCF700859678 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4ADFCBC21FBADCE200859678 /* MRKSurveyCollectionViewCell.swift */,
+				4ADFCBC31FBADCE200859678 /* MRKSurveyCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4ADFCBCD1FBAFD0500859678 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */,
+				4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		697E435ED9268A0725080656 /* Frameworks */ = {
@@ -246,6 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */,
+				4ADFCBC51FBADCE200859678 /* MRKSurveyCollectionViewCell.xib in Resources */,
+				4ADFCBCB1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib in Resources */,
+				4ADFCBC01FBAD51100859678 /* MRKSurveyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +411,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */,
+				4ADFCBCA1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift in Sources */,
+				4ADFCBC71FBAF90800859678 /* MRKReusable.swift in Sources */,
 				4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */,
+				4ADFCBC41FBADCE200859678 /* MRKSurveyCollectionViewCell.swift in Sources */,
 				4ADFCBBB1FBACBEA00859678 /* MRKUtils.swift in Sources */,
+				4ADFCBBF1FBAD51100859678 /* MRKSurveyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

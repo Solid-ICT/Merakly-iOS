@@ -89,7 +89,10 @@ class MRKBannerView: UIView {
             
         }else if let survey = selectedOption.survey {
             //anket gösterilecek
-            
+            let bundle = Bundle(for: MRKBannerView.self)
+            let surveyVC = MRKSurveyViewController(nibName: "MRKSurveyViewController", bundle: bundle)
+            surveyVC.survey = survey
+            self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
             
         }
         
