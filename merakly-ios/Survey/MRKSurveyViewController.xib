@@ -47,7 +47,7 @@
                                         <constraint firstAttribute="height" constant="30" id="J2b-Qo-Wlt"/>
                                         <constraint firstAttribute="width" constant="46" id="nJL-Sj-rug"/>
                                     </constraints>
-                                    <state key="normal" title="Kapa"/>
+                                    <state key="normal" title="Kapat"/>
                                     <connections>
                                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="rBj-jX-4CV"/>
                                     </connections>

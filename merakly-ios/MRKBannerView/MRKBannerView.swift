@@ -96,32 +96,19 @@ class MRKBannerView: UIView {
             
         }
         
-        
     }
     
     func getBannerServiceMethod() {
         
-        Alamofire.request("http://merakly.sickthread.com/campaign/random?applicationId=1&deviceId=Fikri&osType=1", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        let urlParams = ["applicationId": "1", "deviceId": "123", "osType": "1"]
+        
+        MRKAPIWrapper.requestRandomAd(urlParams: urlParams, success: { (campaign) in
             
-            switch response.result {
-                
-            case .success(let value):
-                
-                guard let json = value as? [String: Any] else { return }
-                let responseObject = try! MRKResponse(object: json)
-                guard let campaignJson = responseObject.data as? [String: Any] else { return }
-                let campaignObject = try! MRKCampaign(object: campaignJson)
-                self.campaign = campaignObject
-                self.loadDataToView(campaign: campaignObject)
-                
-            case .failure(let err):
-                
-                print(err)
-                self.activityIndicator.stopAnimating()
-                
-                
-            }
-
+            self.campaign = campaign
+            self.loadDataToView(campaign: campaign)
+            
+        }) {(err) in
+            print(err.localizedDescription)
         }
 
     }

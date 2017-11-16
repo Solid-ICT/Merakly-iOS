@@ -12,8 +12,8 @@ import Marshal
 struct MRKResponse: Unmarshaling {
     
     var succeed: Bool
-    var message: String
-    var data: Any
+    var message: String?
+    var data: Any?
   
     init(object: MarshaledObject) throws {
         
@@ -29,14 +29,12 @@ struct MRKCampaign: Unmarshaling {
     
     var campaignId: Int
     var question: String
-    var creationDate: String
     var options: [MRKCampaignOption]
     
     init(object: MarshaledObject) throws {
         
         campaignId = try object.value(for: "id")
         question = try object.value(for: "question")
-        creationDate = try object.value(for: "creationDate")
         options = try object.value(for: "options")
 
     }
@@ -64,18 +62,14 @@ struct MRKCampaignOption: Unmarshaling {
 struct MRKBanner: Unmarshaling {
     
     var bannerId: Int
-    var name: String
     var imageUrl: URL
     var targetUrl: URL
-    var creationDate: String
     
     init(object: MarshaledObject) throws {
         
         bannerId = try object.value(for: "id")
-        name = try object.value(for: "name")
         imageUrl = try object.value(for: "imageUrl")
         targetUrl = try object.value(for: "targetUrl")
-        creationDate = try object.value(for: "creationDate")
 
     }
     
@@ -84,14 +78,12 @@ struct MRKBanner: Unmarshaling {
 struct MRKSurvey: Unmarshaling {
     
     var surveyId: Int
-    var creationDate: String
     var questions: [MRKSurveyQuestion]
     var banner: MRKBanner
     
     init(object: MarshaledObject) throws {
         
         surveyId = try object.value(for: "id")
-        creationDate = try object.value(for: "creationDate")
         questions = try object.value(for: "questions")
         banner = try object.value(for: "banner")
         

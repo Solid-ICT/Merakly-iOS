@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24C4CA86B531DCB827CC9137 /* Pods_merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */; };
+		4A4CC3C81FBD904600406528 /* MRKAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */; };
 		4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75990D1FBAB35600DC7933 /* MRKModals.swift */; };
 		4A8B0C421FB5738700485900 /* merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8B0C381FB5738700485900 /* merakly_ios.framework */; };
 		4A8B0C471FB5738700485900 /* merakly_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C461FB5738700485900 /* merakly_iosTests.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKAPIRouter.swift; sourceTree = "<group>"; };
 		4A75990D1FBAB35600DC7933 /* MRKModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKModals.swift; sourceTree = "<group>"; };
 		4A8B0C381FB5738700485900 /* merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B0C3B1FB5738700485900 /* merakly_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = merakly_ios.h; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				4A75990D1FBAB35600DC7933 /* MRKModals.swift */,
 				4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */,
 				4ADFCBC61FBAF90800859678 /* MRKReusable.swift */,
+				4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			files = (
 				4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */,
 				4ADFCBCA1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift in Sources */,
+				4A4CC3C81FBD904600406528 /* MRKAPIRouter.swift in Sources */,
 				4ADFCBC71FBAF90800859678 /* MRKReusable.swift in Sources */,
 				4A8B0C541FB58C9900485900 /* MRKBannerView.swift in Sources */,
 				4ADFCBC41FBADCE200859678 /* MRKSurveyCollectionViewCell.swift in Sources */,
