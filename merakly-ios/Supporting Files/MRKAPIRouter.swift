@@ -13,12 +13,18 @@ enum MRKAPIRouter: URLRequestConvertible {
     static let baseUrl = "http://merakly.sickthread.com"
     
     case getRandomAd([String: String])
-    
+    case postCampaingOptionClickEvent([String: Any])
+    case postInlineBannerClickEvent([String: Any])
+    case postSurveyOptionClickEvent([String: Any])
+    case postFullPageBannerClickEvent([String: Any])
+
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
             case .getRandomAd:
                 return .get
+            case .postCampaingOptionClickEvent, .postInlineBannerClickEvent, .postSurveyOptionClickEvent, .postFullPageBannerClickEvent:
+                return .post
             }
         }
         
@@ -26,6 +32,14 @@ enum MRKAPIRouter: URLRequestConvertible {
             switch self {
             case .getRandomAd:
                 return nil
+            case .postCampaingOptionClickEvent(let params):
+                return params
+            case .postInlineBannerClickEvent(let params):
+                return params
+            case .postSurveyOptionClickEvent(let params):
+                return params
+            case .postFullPageBannerClickEvent(let params):
+                return params
             }
         }()
         
@@ -34,12 +48,21 @@ enum MRKAPIRouter: URLRequestConvertible {
             let relativePath: String?
             let query: String?
             switch self {
-            case .getRandomAd(let urlParams):
-                let applicationId = urlParams["applicationId"] ?? ""
-                let deviceId = urlParams["deviceId"] ?? ""
-                let osType = urlParams["osType"] ?? ""
-                relativePath = "/campaign/random"
-                query = "applicationId=\(applicationId)&deviceId=\(deviceId)&osType=\(osType)"
+            case .getRandomAd:
+                relativePath = "/device/campaign/random"
+                query = ""
+            case .postCampaingOptionClickEvent:
+                relativePath = "/device/action/campaign-option-click"
+                query = ""
+            case .postInlineBannerClickEvent:
+                relativePath = "/device/action/banner-inline-click"
+                query = ""
+            case .postSurveyOptionClickEvent:
+                relativePath = "/device/action/survey-option-click"
+                query = ""
+            case .postFullPageBannerClickEvent:
+                relativePath = "/device/action/banner-full-page-click"
+                query = ""
             }
             
             var urlComponents = URLComponents(string: MRKAPIRouter.baseUrl)!
@@ -54,13 +77,8 @@ enum MRKAPIRouter: URLRequestConvertible {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        
-        let encoding: ParameterEncoding
-        
-        switch self {
-        case .getRandomAd:
-            encoding = JSONEncoding.default
-        }
+        urlRequest.addValue("ewoiZGV2aWNlSWRlbnRpdHkiOiAxMjEzLAoib3NUeXBlIjogMCwKIm9zVmVyc2lvbiI6ICIxLjAiLAoibG9jYWxlIjogInRyIiwKImFwcGxpY2F0aW9uSWQiOiAxLAoibGF0aXR1ZGUiOiA0NS4wLAoibG9uZ2l0dWRlIjogMzMuMAp9", forHTTPHeaderField: "x-identifier")
+        let encoding: ParameterEncoding = JSONEncoding.default
         
         return try encoding.encode(urlRequest, with: params)
     }
@@ -79,6 +97,74 @@ class MRKAPIWrapper: NSObject {
                 guard let campaignJson = responseObject.data as? [String: Any] else { return }
                 let campaignObject = try! MRKCampaign(object: campaignJson)
                 success(campaignObject)
+            case .failure(let err):
+                failure(err)
+            }
+            
+        }
+        
+    }
+    
+    class func sendCampaignOptionClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+        
+        Alamofire.request(MRKAPIRouter.postCampaingOptionClickEvent(urlParams)).responseJSON { (responseObject) in
+            
+            switch responseObject.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                let responseObject = try! MRKResponse(object: json)
+                success(responseObject)
+            case .failure(let err):
+                failure(err)
+            }
+            
+        }
+        
+    }
+    
+    class func sendInlineBannerClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+        
+        Alamofire.request(MRKAPIRouter.postInlineBannerClickEven(urlParams)).responseJSON { (responseObject) in
+            
+            switch responseObject.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                let responseObject = try! MRKResponse(object: json)
+                success(responseObject)
+            case .failure(let err):
+                failure(err)
+            }
+            
+        }
+        
+    }
+    
+    class func sendSurveyOptionClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+        
+        Alamofire.request(MRKAPIRouter.postSurveyOptionClickEvent(urlParams)).responseJSON { (responseObject) in
+            
+            switch responseObject.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                let responseObject = try! MRKResponse(object: json)
+                success(responseObject)
+            case .failure(let err):
+                failure(err)
+            }
+            
+        }
+        
+    }
+    
+    class func sendFullPageBannerClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+        
+        Alamofire.request(MRKAPIRouter.postFullPageBannerClickEvent(urlParams)).responseJSON { (responseObject) in
+            
+            switch responseObject.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                let responseObject = try! MRKResponse(object: json)
+                success(responseObject)
             case .failure(let err):
                 failure(err)
             }
