@@ -19,7 +19,7 @@ struct MRKResponse: Unmarshaling {
         
         succeed = try object.value(for: "succeed")
         message = try object.value(for: "message")
-        data = try object.any(for: "object")
+        data = try? object.any(for: "object")
 
     }
     

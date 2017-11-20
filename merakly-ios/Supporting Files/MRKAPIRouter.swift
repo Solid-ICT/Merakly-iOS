@@ -13,10 +13,10 @@ enum MRKAPIRouter: URLRequestConvertible {
     static let baseUrl = "http://merakly.sickthread.com"
     
     case getRandomAd([String: String])
-    case postCampaingOptionClickEvent([String: Any])
-    case postInlineBannerClickEvent([String: Any])
-    case postSurveyOptionClickEvent([String: Any])
-    case postFullPageBannerClickEvent([String: Any])
+    case postCampaingOptionClickEvent([String: Any]) //campaignOptionId(int), replyTime(float)
+    case postInlineBannerClickEvent([String: Any]) //campaignOptionId(int), bannerId(int)
+    case postSurveyOptionClickEvent([String: Any]) //campaignId(int), campaignOptionId(int), surveyOptionId(int)
+    case postFullPageBannerClickEvent([String: Any]) //campaignId(int), surveyId(int), bannerId(int)
 
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
@@ -86,9 +86,9 @@ enum MRKAPIRouter: URLRequestConvertible {
 
 class MRKAPIWrapper: NSObject {
     
-    class func requestRandomAd(urlParams: [String: String], success:@escaping (MRKCampaign) -> Void, failure:@escaping (Error) -> Void) {
+    class func requestRandomAd(params: [String: String], success:@escaping (MRKCampaign) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
-        Alamofire.request(MRKAPIRouter.getRandomAd(urlParams)).responseJSON { (responseObject) in
+        Alamofire.request(MRKAPIRouter.getRandomAd(params)).responseJSON { (responseObject) in
             
             switch responseObject.result {
             case .success(let value):
@@ -98,16 +98,16 @@ class MRKAPIWrapper: NSObject {
                 let campaignObject = try! MRKCampaign(object: campaignJson)
                 success(campaignObject)
             case .failure(let err):
-                failure(err)
+                failure(err, responseObject.response?.statusCode)
             }
             
         }
         
     }
     
-    class func sendCampaignOptionClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+    class func sendCampaignOptionClickEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
-        Alamofire.request(MRKAPIRouter.postCampaingOptionClickEvent(urlParams)).responseJSON { (responseObject) in
+        Alamofire.request(MRKAPIRouter.postCampaingOptionClickEvent(params)).responseJSON { (responseObject) in
             
             switch responseObject.result {
             case .success(let value):
@@ -115,16 +115,16 @@ class MRKAPIWrapper: NSObject {
                 let responseObject = try! MRKResponse(object: json)
                 success(responseObject)
             case .failure(let err):
-                failure(err)
+                failure(err, responseObject.response?.statusCode)
             }
             
         }
         
     }
     
-    class func sendInlineBannerClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+    class func sendInlineBannerClickEvent(params: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
-        Alamofire.request(MRKAPIRouter.postInlineBannerClickEvent(urlParams)).responseJSON { (responseObject) in
+        Alamofire.request(MRKAPIRouter.postInlineBannerClickEvent(params)).responseJSON { (responseObject) in
             
             switch responseObject.result {
             case .success(let value):
@@ -132,16 +132,16 @@ class MRKAPIWrapper: NSObject {
                 let responseObject = try! MRKResponse(object: json)
                 success(responseObject)
             case .failure(let err):
-                failure(err)
+                failure(err, responseObject.response?.statusCode)
             }
             
         }
         
     }
     
-    class func sendSurveyOptionClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+    class func sendSurveyOptionClickEvent(params: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
-        Alamofire.request(MRKAPIRouter.postSurveyOptionClickEvent(urlParams)).responseJSON { (responseObject) in
+        Alamofire.request(MRKAPIRouter.postSurveyOptionClickEvent(params)).responseJSON { (responseObject) in
             
             switch responseObject.result {
             case .success(let value):
@@ -149,16 +149,16 @@ class MRKAPIWrapper: NSObject {
                 let responseObject = try! MRKResponse(object: json)
                 success(responseObject)
             case .failure(let err):
-                failure(err)
+                failure(err, responseObject.response?.statusCode)
             }
             
         }
         
     }
     
-    class func sendFullPageBannerClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
+    class func sendFullPageBannerClickEvent(params: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
-        Alamofire.request(MRKAPIRouter.postFullPageBannerClickEvent(urlParams)).responseJSON { (responseObject) in
+        Alamofire.request(MRKAPIRouter.postFullPageBannerClickEvent(params)).responseJSON { (responseObject) in
             
             switch responseObject.result {
             case .success(let value):
@@ -166,7 +166,7 @@ class MRKAPIWrapper: NSObject {
                 let responseObject = try! MRKResponse(object: json)
                 success(responseObject)
             case .failure(let err):
-                failure(err)
+                failure(err, responseObject.response?.statusCode)
             }
             
         }
