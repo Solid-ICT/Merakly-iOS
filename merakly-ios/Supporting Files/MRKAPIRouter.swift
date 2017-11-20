@@ -124,7 +124,7 @@ class MRKAPIWrapper: NSObject {
     
     class func sendInlineBannerClickEvent(urlParams: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error) -> Void) {
         
-        Alamofire.request(MRKAPIRouter.postInlineBannerClickEven(urlParams)).responseJSON { (responseObject) in
+        Alamofire.request(MRKAPIRouter.postInlineBannerClickEvent(urlParams)).responseJSON { (responseObject) in
             
             switch responseObject.result {
             case .success(let value):
