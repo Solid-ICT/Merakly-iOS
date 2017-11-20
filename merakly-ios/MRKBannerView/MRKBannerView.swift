@@ -12,7 +12,10 @@ import SDWebImage
 
 class MRKBannerView: UIView {
     
+    //MARK: Variables
     var campaign: MRKCampaign!
+    var timer: Timer!
+    var totalTime: Float = 0.0
     
     //MARK: UIView
     @IBOutlet var contentView: UIView!
@@ -45,6 +48,7 @@ class MRKBannerView: UIView {
     
     @IBAction func segmentedControlValueDidChange(_ sender: Any) {
         
+        timer.invalidate()
         let selectedOption = self.campaign.options[answersSegmentedControl.selectedSegmentIndex]
         postCampaignOptionClickEvent(withCampaignOption: selectedOption)
         deciderAfterUserSelection(withCampaignOption: selectedOption)
@@ -82,8 +86,7 @@ class MRKBannerView: UIView {
     //MARK: didMoveToWindow
 
     override func didMoveToWindow() {
-        print("didMoveToWindow")
-        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
 
     
@@ -121,6 +124,10 @@ class MRKBannerView: UIView {
         
     }
     
+    @objc func updateCounter() {
+        totalTime = totalTime + 0.1
+    }
+    
     //MARK: API calls
     
     func getBannerServiceMethod() {
@@ -141,7 +148,7 @@ class MRKBannerView: UIView {
     
     func postCampaignOptionClickEvent(withCampaignOption clickedOption: MRKCampaignOption) {
         
-        let params: [String : Any] = ["campaignOptionId": clickedOption.campaignOptionId, "replyTime": 5.0]
+        let params: [String : Any] = ["campaignOptionId": clickedOption.campaignOptionId, "replyTime": totalTime]
         
         MRKAPIWrapper.sendCampaignOptionClickEvent(params: params, success: { (response) in
             
