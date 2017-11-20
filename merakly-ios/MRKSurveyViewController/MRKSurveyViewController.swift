@@ -60,6 +60,15 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         
     }
     
+    func surveyEndend() {
+        self.dismiss(animated: true) {
+            let fullPageAdView = MRKFullPageAdView(frame: CGRect(x: 0, y: 0, width: UIDevice.current.screenSize.width, height: UIDevice.current.screenSize.height))
+            fullPageAdView.banner = self.survey.banner
+            UIApplication.shared.keyWindow?.addSubview(fullPageAdView)
+            
+        }
+    }
+    
     //MARK: API calls
     
     func postSurveyOptionClickEvent(surveyOptionId: Int, campaignId: Int, campaignOptionId: Int) {

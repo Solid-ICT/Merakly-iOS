@@ -10,6 +10,7 @@ import UIKit
 
 protocol MRKSurveyCollectionViewCellDelegate: class {
     func surveyOptionClicked(withSurveyOption surveyOption:MRKSurveyOption)
+    func surveyEndend()
 }
 
 class MRKSurveyCollectionViewCell: UICollectionViewCell, Reusable, UITableViewDelegate, UITableViewDataSource {
@@ -60,6 +61,17 @@ class MRKSurveyCollectionViewCell: UICollectionViewCell, Reusable, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let collectionView = self.superview as? UICollectionView else { return }
+        let nextIndex = index + 1
+        if nextIndex < collectionView.numberOfItems(inSection: 0) {
+            let nextIndexPath = IndexPath(item: index + 1, section: 0)
+            collectionView.scrollToItem(at: nextIndexPath, at: .right, animated: true)
+        }else {
+            //Last question answered, show full page ad
+            delegate?.surveyEndend()
+        }
+
         
         let selectedSurveyOption = questions[index].options[indexPath.row]
         delegate?.surveyOptionClicked(withSurveyOption: selectedSurveyOption)

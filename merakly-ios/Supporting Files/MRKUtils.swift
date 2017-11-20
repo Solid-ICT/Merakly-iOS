@@ -28,3 +28,16 @@ import Foundation
     }
 }
 
+extension UIDevice {
+    
+    var screenSize: CGSize {
+        
+        let bounds = UIScreen.main.bounds
+        let width = bounds.size.width
+        let height = bounds.size.height
+        
+        return CGSize(width: width, height: height)
+        
+    }
+    
+}
