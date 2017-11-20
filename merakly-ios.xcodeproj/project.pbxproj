@@ -118,7 +118,7 @@
 		4A8B0C3A1FB5738700485900 /* merakly-ios */ = {
 			isa = PBXGroup;
 			children = (
-				4ADFCBBC1FBAD4F400859678 /* Survey */,
+				4ADFCBBC1FBAD4F400859678 /* MRKSurveyViewController */,
 				4A8B0C521FB58C5F00485900 /* MRKBannerView */,
 				4A75990C1FBAB34300DC7933 /* Supporting Files */,
 				4A8B0C3B1FB5738700485900 /* merakly_ios.h */,
@@ -145,14 +145,14 @@
 			path = MRKBannerView;
 			sourceTree = "<group>";
 		};
-		4ADFCBBC1FBAD4F400859678 /* Survey */ = {
+		4ADFCBBC1FBAD4F400859678 /* MRKSurveyViewController */ = {
 			isa = PBXGroup;
 			children = (
 				4ADFCBBD1FBAD51100859678 /* MRKSurveyViewController.swift */,
 				4ADFCBBE1FBAD51100859678 /* MRKSurveyViewController.xib */,
 				4ADFCBC11FBADC9800859678 /* UICollectionView Files */,
 			);
-			path = Survey;
+			path = MRKSurveyViewController;
 			sourceTree = "<group>";
 		};
 		4ADFCBC11FBADC9800859678 /* UICollectionView Files */ = {
