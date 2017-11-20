@@ -41,6 +41,8 @@ class MRKBannerView: UIView {
     @IBAction func adButtonTapped(_ sender: Any) {
         
         let selectedOption = self.campaign.options[answersSegmentedControl.selectedSegmentIndex]
+        guard let bannerId = selectedOption.banner?.bannerId else { return }
+        postInlineBannerClickEvent(withCampaignOption: selectedOption, bannerId: bannerId)
         guard let url = selectedOption.banner?.targetUrl else { return }
         UIApplication.shared.openURL(url)
         
@@ -153,6 +155,19 @@ class MRKBannerView: UIView {
         let params: [String : Any] = ["campaignOptionId": clickedOption.campaignOptionId, "replyTime": totalTime]
         
         MRKAPIWrapper.sendCampaignOptionClickEvent(params: params, success: { (response) in
+            
+        }) { (err, statusCode) in
+            print(err.localizedDescription)
+            print("HTTP Response Code: \(String(describing: statusCode))")
+        }
+
+    }
+    
+    func postInlineBannerClickEvent(withCampaignOption clickedOption: MRKCampaignOption, bannerId: Int) {
+        
+        let params: [String: Any] = ["campaignOptionId": clickedOption.campaignOptionId, "bannerId": bannerId]
+        
+        MRKAPIWrapper.sendInlineBannerClickEvent(params: params, success: { (response) in
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
