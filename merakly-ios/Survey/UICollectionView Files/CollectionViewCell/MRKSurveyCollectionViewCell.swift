@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MRKSurveyCollectionViewCellDelegate: class {
+    func surveyOptionClicked(withSurveyOption surveyOption:MRKSurveyOption)
+}
+
 class MRKSurveyCollectionViewCell: UICollectionViewCell, Reusable, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -16,17 +20,19 @@ class MRKSurveyCollectionViewCell: UICollectionViewCell, Reusable, UITableViewDe
     var questions: [MRKSurveyQuestion]!
     var index: Int!
     
+    weak var delegate: MRKSurveyCollectionViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
 
     }
     
     override func layoutSubviews() {
+        
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         
@@ -50,6 +56,13 @@ class MRKSurveyCollectionViewCell: UICollectionViewCell, Reusable, UITableViewDe
         let questionOption = questions[index].options[indexPath.row]
         cell.optionLabel.text = questionOption.option
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedSurveyOption = questions[index].options[indexPath.row]
+        delegate?.surveyOptionClicked(withSurveyOption: selectedSurveyOption)
         
     }
 

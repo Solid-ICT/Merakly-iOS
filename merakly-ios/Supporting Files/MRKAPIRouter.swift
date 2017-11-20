@@ -122,7 +122,7 @@ class MRKAPIWrapper: NSObject {
         
     }
     
-    class func sendInlineBannerClickEvent(params: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
+    class func sendInlineBannerClickEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
         Alamofire.request(MRKAPIRouter.postInlineBannerClickEvent(params)).responseJSON { (responseObject) in
             
@@ -139,7 +139,7 @@ class MRKAPIWrapper: NSObject {
         
     }
     
-    class func sendSurveyOptionClickEvent(params: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
+    class func sendSurveyOptionClickEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
         Alamofire.request(MRKAPIRouter.postSurveyOptionClickEvent(params)).responseJSON { (responseObject) in
             
@@ -156,7 +156,7 @@ class MRKAPIWrapper: NSObject {
         
     }
     
-    class func sendFullPageBannerClickEvent(params: [String: String], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
+    class func sendFullPageBannerClickEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
         Alamofire.request(MRKAPIRouter.postFullPageBannerClickEvent(params)).responseJSON { (responseObject) in
             

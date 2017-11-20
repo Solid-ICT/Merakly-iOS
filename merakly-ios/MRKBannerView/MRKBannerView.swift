@@ -118,6 +118,8 @@ class MRKBannerView: UIView {
             let bundle = Bundle(for: MRKBannerView.self)
             let surveyVC = MRKSurveyViewController(nibName: "MRKSurveyViewController", bundle: bundle)
             surveyVC.survey = survey
+            surveyVC.campaignId = self.campaign.campaignId
+            surveyVC.campaignOptionId = selectedOption.campaignOptionId
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
             
         }
