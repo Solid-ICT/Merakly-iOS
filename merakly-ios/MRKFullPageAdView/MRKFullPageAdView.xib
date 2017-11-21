@@ -30,6 +30,17 @@
                         <action selector="adButtonTapped:" destination="-1" eventType="touchUpInside" id="dtc-qc-zd4"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI4-0L-yLa">
+                    <rect key="frame" x="275" y="20" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="hVt-m7-opd"/>
+                        <constraint firstAttribute="height" constant="45" id="jNh-UZ-DY5"/>
+                    </constraints>
+                    <state key="normal" image="close.png"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="x7X-xN-yHm"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -41,8 +52,13 @@
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="b5a-2c-Crn"/>
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dBd-ly-IaY"/>
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="dgR-nG-vid"/>
+                <constraint firstItem="JI4-0L-yLa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ndo-iZ-FU5"/>
+                <constraint firstItem="JI4-0L-yLa" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="td6-ig-PwU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
+    <resources>
+        <image name="close.png" width="16" height="16"/>
+    </resources>
 </document>

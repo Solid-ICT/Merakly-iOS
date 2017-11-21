@@ -103,8 +103,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "icon.png"
-  s.resources = "merakly-ios/**/*.{xib}"
+  s.resources = "merakly-ios/**/*.{xib,png}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

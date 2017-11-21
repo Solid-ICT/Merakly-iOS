@@ -138,7 +138,7 @@ class MRKBannerView: UIView {
         
         let params = ["applicationId": "1", "deviceId": "123", "osType": "1"]
         
-        MRKAPIWrapper.requestRandomAd(params: params, success: { (campaign) in
+        MRKAPIWrapper.getRandomAd(params: params, success: { (campaign) in
             
             self.campaign = campaign
             self.loadDataToView(campaign: campaign)
@@ -154,7 +154,7 @@ class MRKBannerView: UIView {
         
         let params: [String : Any] = ["campaignOptionId": clickedOption.campaignOptionId, "replyTime": totalTime]
         
-        MRKAPIWrapper.sendCampaignOptionClickEvent(params: params, success: { (response) in
+        MRKAPIWrapper.postCampaignOptionClickEvent(params: params, success: { (response) in
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
@@ -167,7 +167,7 @@ class MRKBannerView: UIView {
         
         let params: [String: Any] = ["campaignOptionId": clickedOption.campaignOptionId, "bannerId": bannerId]
         
-        MRKAPIWrapper.sendInlineBannerClickEvent(params: params, success: { (response) in
+        MRKAPIWrapper.postInlineBannerClickEvent(params: params, success: { (response) in
             
         }) { (err, statusCode) in
             print(err.localizedDescription)

@@ -64,6 +64,8 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         self.dismiss(animated: true) {
             let fullPageAdView = MRKFullPageAdView(frame: CGRect(x: 0, y: 0, width: UIDevice.current.screenSize.width, height: UIDevice.current.screenSize.height))
             fullPageAdView.banner = self.survey.banner
+            fullPageAdView.campaignId = self.campaignId
+            fullPageAdView.surveyId = self.survey.surveyId
             UIApplication.shared.keyWindow?.addSubview(fullPageAdView)
             
         }
@@ -75,7 +77,7 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         
         let params: [String: Any] = ["campaignId": campaignId, "campaignOptionId": campaignOptionId, "surveyOptionId": surveyOptionId]
         
-        MRKAPIWrapper.sendSurveyOptionClickEvent(params: params, success: { (response) in
+        MRKAPIWrapper.postSurveyOptionClickEvent(params: params, success: { (response) in
             
       
         }) { (err, statusCode) in

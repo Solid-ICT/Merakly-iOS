@@ -41,13 +41,13 @@
                                         <outlet property="delegate" destination="-1" id="Rat-IF-G6M"/>
                                     </connections>
                                 </collectionView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnJ-ED-ri8">
-                                    <rect key="frame" x="264" y="0.0" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnJ-ED-ri8">
+                                    <rect key="frame" x="279" y="5" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="J2b-Qo-Wlt"/>
-                                        <constraint firstAttribute="width" constant="46" id="nJL-Sj-rug"/>
+                                        <constraint firstAttribute="width" constant="30" id="nJL-Sj-rug"/>
                                     </constraints>
-                                    <state key="normal" title="Kapat"/>
+                                    <state key="normal" image="close.png"/>
                                     <connections>
                                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="rBj-jX-4CV"/>
                                     </connections>
@@ -57,10 +57,10 @@
                             <constraints>
                                 <constraint firstItem="RMP-Wg-gfa" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" constant="10" id="3cn-Qh-iaa"/>
                                 <constraint firstAttribute="bottom" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="20" id="Ncc-lm-HbB"/>
-                                <constraint firstItem="mnJ-ED-ri8" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" id="OCs-KA-nO5"/>
+                                <constraint firstItem="mnJ-ED-ri8" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="5" id="OCs-KA-nO5"/>
                                 <constraint firstItem="RMP-Wg-gfa" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="40" id="YOy-38-Fh1"/>
                                 <constraint firstAttribute="trailing" secondItem="RMP-Wg-gfa" secondAttribute="trailing" constant="10" id="uTc-C2-wIP"/>
-                                <constraint firstAttribute="trailing" secondItem="mnJ-ED-ri8" secondAttribute="trailing" constant="10" id="xWV-qD-Wph"/>
+                                <constraint firstAttribute="trailing" secondItem="mnJ-ED-ri8" secondAttribute="trailing" constant="11" id="xWV-qD-Wph"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -88,4 +88,7 @@
             <point key="canvasLocation" x="30" y="43"/>
         </view>
     </objects>
+    <resources>
+        <image name="close.png" width="16" height="16"/>
+    </resources>
 </document>
