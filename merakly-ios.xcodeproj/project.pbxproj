@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		24C4CA86B531DCB827CC9137 /* Pods_merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */; };
 		4A4CC3C81FBD904600406528 /* MRKAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */; };
+		4A6896031FC540F700B55A3C /* Merakly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6896021FC540F700B55A3C /* Merakly.swift */; };
 		4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75990D1FBAB35600DC7933 /* MRKModals.swift */; };
 		4A7CBF681FC4182C001D0746 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CBF651FC4182B001D0746 /* close@2x.png */; };
 		4A7CBF691FC4182C001D0746 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CBF661FC4182B001D0746 /* close@3x.png */; };
 		4A7CBF6A1FC4182C001D0746 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CBF671FC4182B001D0746 /* close.png */; };
+		4A7CBF7E1FC45B58001D0746 /* MRKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CBF7D1FC45B58001D0746 /* MRKLocationManager.swift */; };
 		4A8B0C421FB5738700485900 /* merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8B0C381FB5738700485900 /* merakly_ios.framework */; };
 		4A8B0C471FB5738700485900 /* merakly_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B0C461FB5738700485900 /* merakly_iosTests.swift */; };
 		4A8B0C491FB5738700485900 /* merakly_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8B0C3B1FB5738700485900 /* merakly_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,10 +46,12 @@
 /* Begin PBXFileReference section */
 		12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKAPIRouter.swift; sourceTree = "<group>"; };
+		4A6896021FC540F700B55A3C /* Merakly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merakly.swift; sourceTree = "<group>"; };
 		4A75990D1FBAB35600DC7933 /* MRKModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKModals.swift; sourceTree = "<group>"; };
 		4A7CBF651FC4182B001D0746 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		4A7CBF661FC4182B001D0746 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
 		4A7CBF671FC4182B001D0746 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		4A7CBF7D1FC45B58001D0746 /* MRKLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKLocationManager.swift; sourceTree = "<group>"; };
 		4A8B0C381FB5738700485900 /* merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B0C3B1FB5738700485900 /* merakly_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = merakly_ios.h; sourceTree = "<group>"; };
 		4A8B0C3C1FB5738700485900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A6896041FC540FE00B55A3C /* Main Class */ = {
+			isa = PBXGroup;
+			children = (
+				4A6896021FC540F700B55A3C /* Merakly.swift */,
+			);
+			path = "Main Class";
+			sourceTree = "<group>";
+		};
 		4A75990C1FBAB34300DC7933 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +116,7 @@
 				4ADFCBBA1FBACBEA00859678 /* MRKUtils.swift */,
 				4ADFCBC61FBAF90800859678 /* MRKReusable.swift */,
 				4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */,
+				4A7CBF7D1FC45B58001D0746 /* MRKLocationManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 		4A8B0C3A1FB5738700485900 /* merakly-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4A6896041FC540FE00B55A3C /* Main Class */,
 				4ABDEA661FC308010029BF1C /* MRKFullPageAdView */,
 				4ADFCBBC1FBAD4F400859678 /* MRKSurveyViewController */,
 				4A8B0C521FB58C5F00485900 /* MRKBannerView */,
@@ -449,6 +463,8 @@
 				4ADFCBC41FBADCE200859678 /* MRKSurveyCollectionViewCell.swift in Sources */,
 				4ADFCBBB1FBACBEA00859678 /* MRKUtils.swift in Sources */,
 				4ADFCBBF1FBAD51100859678 /* MRKSurveyViewController.swift in Sources */,
+				4A7CBF7E1FC45B58001D0746 /* MRKLocationManager.swift in Sources */,
+				4A6896031FC540F700B55A3C /* Merakly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
