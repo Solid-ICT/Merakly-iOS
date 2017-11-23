@@ -39,6 +39,7 @@
 		4ADFCBC71FBAF90800859678 /* MRKReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC61FBAF90800859678 /* MRKReusable.swift */; };
 		4ADFCBCA1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */; };
 		4ADFCBCB1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */; };
+		4AE5B5A11FC71C6D003CFB54 /* MRKDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5B5A01FC71C6D003CFB54 /* MRKDelegates.swift */; };
 		5A715FC6708A3A6C78B4298D /* Pods_merakly_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		4ADFCBC61FBAF90800859678 /* MRKReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKReusable.swift; sourceTree = "<group>"; };
 		4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKSurveyQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKSurveyQuestionTableViewCell.xib; sourceTree = "<group>"; };
+		4AE5B5A01FC71C6D003CFB54 /* MRKDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKDelegates.swift; sourceTree = "<group>"; };
 		4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.release.xcconfig"; sourceTree = "<group>"; };
 		7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				4ADFCBC61FBAF90800859678 /* MRKReusable.swift */,
 				4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */,
 				4A7CBF7D1FC45B58001D0746 /* MRKLocationManager.swift */,
+				4AE5B5A01FC71C6D003CFB54 /* MRKDelegates.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */,
+				4AE5B5A11FC71C6D003CFB54 /* MRKDelegates.swift in Sources */,
 				4ADFCBCA1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift in Sources */,
 				4A4CC3C81FBD904600406528 /* MRKAPIRouter.swift in Sources */,
 				4ADFCBC71FBAF90800859678 /* MRKReusable.swift in Sources */,

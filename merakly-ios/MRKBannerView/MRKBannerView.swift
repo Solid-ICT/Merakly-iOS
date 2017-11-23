@@ -17,6 +17,9 @@ import SDWebImage
     var timer: Timer!
     var totalTime: Float = 0.0
     
+    //MARK: Delegate
+    public weak var delegate: MeraklyDelegate?
+    
     //MARK: UIView
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var containerView: UIView!
@@ -108,6 +111,8 @@ import SDWebImage
         self.activityIndicator.stopAnimating()
         self.containerView.isHidden = false
         
+        delegate?.campaignLoaded!()
+        
         postCampaignViewEvent()
         
     }
@@ -116,7 +121,9 @@ import SDWebImage
         
         if let banner = selectedOption.banner {
             //banner gösterilecek
-            adImageView.sd_setImage(with: banner.imageUrl, completed: nil)
+            adImageView.sd_setImage(with: banner.imageUrl, completed: { (_, _, _, _) in
+                self.delegate?.adLoaded!()
+            })
             containerView.isHidden = true
             adContainerView.isHidden = false
             
@@ -127,7 +134,7 @@ import SDWebImage
             surveyVC.survey = survey
             surveyVC.campaignId = self.campaign.campaignId
             surveyVC.campaignOptionId = selectedOption.campaignOptionId
-            //surveyVC.modalPresentationStyle = .overCurrentContext
+            surveyVC.delegate = delegate
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
             
         }

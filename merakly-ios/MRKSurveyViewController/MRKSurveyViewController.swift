@@ -15,8 +15,10 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
     var survey: MRKSurvey!
     var campaignId: Int!
     var campaignOptionId: Int!
+    weak var delegate: MeraklyDelegate?
     
     @IBAction func closeButtonTapped(_ sender: Any) {
+        delegate?.surveyCanceled!()
         self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
@@ -25,6 +27,8 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         // Do any additional setup after loading the view.
         
         surveyCollectionView.register(cellType: MRKSurveyCollectionViewCell.self)
+        
+        delegate?.surveyStarted!()
         
     }
     
@@ -61,13 +65,13 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func surveyEndend() {
+        delegate?.surveyEnded!()
         self.dismiss(animated: true) {
             let fullPageAdView = MRKFullPageAdView(frame: CGRect(x: 0, y: 0, width: UIDevice.current.screenSize.width, height: UIDevice.current.screenSize.height))
             fullPageAdView.banner = self.survey.banner
             fullPageAdView.campaignId = self.campaignId
             fullPageAdView.surveyId = self.survey.surveyId
             UIApplication.shared.keyWindow?.addSubview(fullPageAdView)
-            
         }
     }
     
