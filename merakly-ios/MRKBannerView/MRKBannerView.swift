@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class MRKBannerView: UIView {
+@objc public class MRKBannerView: UIView {
     
     //MARK: Variables
     var campaign: MRKCampaign!
@@ -58,17 +58,17 @@ class MRKBannerView: UIView {
     }
 
     //MARK: Init functions
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         self.commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
     }
@@ -88,7 +88,7 @@ class MRKBannerView: UIView {
     
     //MARK: didMoveToWindow
 
-    override func didMoveToWindow() {
+    override public func didMoveToWindow() {
         
         MRKAPIRouter.identifierBase64DidChangeClosure = {
             self.getBannerServiceMethod()
@@ -97,7 +97,6 @@ class MRKBannerView: UIView {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         
     }
-
     
     //MARK: Helper functions
     

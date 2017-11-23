@@ -6,13 +6,13 @@
 //  Copyright © 2017 Solid-ICT. All rights reserved.
 //
 
-public class Merakly {
+@objc public class Merakly: NSObject {
     
     private static var locationManager = MRKLocationManager()
 
-    public init() {}
+    public override init() {}
     
-    static public func configure(withApiKey apiKey: String, andAppSecret appSecret:String) {
+    @objc static public func configure(withApiKey apiKey: String, andAppSecret appSecret:String) {
         
         var identifier: MRKIdentifier!
         
