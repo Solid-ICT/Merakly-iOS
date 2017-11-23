@@ -20,27 +20,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYy-fh-lo7">
-                        <rect key="frame" x="10" y="9" width="304" height="51"/>
+                        <rect key="frame" x="10" y="10" width="304" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-D7-KRm">
-                                <rect key="frame" x="9" y="11" width="286" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-D7-KRm">
+                                <rect key="frame" x="9" y="9" width="286" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.91372549020000005" green="0.83529411760000005" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.20000000000000001" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fw4-D7-KRm" firstAttribute="leading" secondItem="IYy-fh-lo7" secondAttribute="leading" constant="9" id="0nV-iY-Mzo"/>
                             <constraint firstAttribute="trailing" secondItem="Fw4-D7-KRm" secondAttribute="trailing" constant="9" id="O0D-IN-dbZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Fw4-D7-KRm" secondAttribute="bottom" constant="8" id="OeO-nj-Y3W"/>
-                            <constraint firstItem="Fw4-D7-KRm" firstAttribute="top" secondItem="IYy-fh-lo7" secondAttribute="top" constant="11" id="nxB-Ek-gdZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Fw4-D7-KRm" secondAttribute="bottom" constant="9" id="OeO-nj-Y3W"/>
+                            <constraint firstItem="Fw4-D7-KRm" firstAttribute="top" secondItem="IYy-fh-lo7" secondAttribute="top" constant="9" id="nxB-Ek-gdZ"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="IYy-fh-lo7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1Y6-Qy-xzw"/>
-                    <constraint firstItem="IYy-fh-lo7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="N16-10-FrL"/>
+                    <constraint firstItem="IYy-fh-lo7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N16-10-FrL"/>
                     <constraint firstAttribute="trailing" secondItem="IYy-fh-lo7" secondAttribute="trailing" constant="6" id="SWu-Le-Mkc"/>
                     <constraint firstAttribute="bottom" secondItem="IYy-fh-lo7" secondAttribute="bottom" constant="9.5" id="ilT-ie-6cd"/>
                 </constraints>
@@ -48,6 +48,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="containerView" destination="IYy-fh-lo7" id="bNu-sW-kbM"/>
                 <outlet property="optionLabel" destination="Fw4-D7-KRm" id="OVX-VD-9Os"/>
             </connections>
             <point key="canvasLocation" x="-10" y="38"/>

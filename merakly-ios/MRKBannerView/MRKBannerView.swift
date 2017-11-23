@@ -81,6 +81,9 @@ class MRKBannerView: UIView {
         self.addSubview(contentView)
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        let font = UIFont.boldSystemFont(ofSize: 15)
+        answersSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
+        
         getBannerServiceMethod()
                 
     }
@@ -122,6 +125,7 @@ class MRKBannerView: UIView {
             surveyVC.survey = survey
             surveyVC.campaignId = self.campaign.campaignId
             surveyVC.campaignOptionId = selectedOption.campaignOptionId
+            //surveyVC.modalPresentationStyle = .overCurrentContext
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
             
         }

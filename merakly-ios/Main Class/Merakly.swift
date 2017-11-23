@@ -14,9 +14,9 @@ public class Merakly {
     
     static public func configure() {
         
-        self.locationManager.fetchWithCompletion { (location, err) in
-            print(location?.coordinate)
-        }
+//        self.locationManager.fetchWithCompletion { (location, err) in
+//            print(location?.coordinate)
+//        }
         
     }
     

@@ -77,7 +77,7 @@ enum MRKAPIRouter: URLRequestConvertible {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        urlRequest.addValue("eyAiZGV2aWNlSWRlbnRpdHkiOiAxLCAidmVyc2lvbiI6IDEsICJvc1R5cGUiOiAwLCAib3NWZXJzaW9uIjogIjcuMCIsICJsb2NhbGUiOiAiIiwgImFwcGxpY2F0aW9uSWQiOiAxLCAibGF0aXR1ZGUiOiAwLCAibG9uZ2l0dWRlIjogMCB9", forHTTPHeaderField: "x-identifier")
+        urlRequest.addValue("eyAiZGV2aWNlSWRlbnRpdHkiOiAxLCAidmVyc2lvbiI6IDEsICJvc1R5cGUiOiAwLCAib3NWZXJzaW9uIjogIjExLjAiLCAibG9jYWxlIjogInRyLVRSIiwgImFwaUtleSI6ICJ0ZXN0MSIsICJzZWNyZXRLZXkiOiAidGVzdDIiLCAibGF0aXR1ZGUiOiAwLjAsICJsb25naXR1ZGUiOiAwLjAgfQ==", forHTTPHeaderField: "x-identifier")
         let encoding: ParameterEncoding = JSONEncoding.default
         
         return try encoding.encode(urlRequest, with: params)

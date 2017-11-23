@@ -36,7 +36,7 @@
                         <constraint firstAttribute="width" constant="45" id="hVt-m7-opd"/>
                         <constraint firstAttribute="height" constant="45" id="jNh-UZ-DY5"/>
                     </constraints>
-                    <state key="normal" image="close.png"/>
+                    <state key="normal" image="kapat.png"/>
                     <connections>
                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="x7X-xN-yHm"/>
                     </connections>
@@ -59,6 +59,6 @@
         </view>
     </objects>
     <resources>
-        <image name="close.png" width="16" height="16"/>
+        <image name="kapat.png" width="12" height="12"/>
     </resources>
 </document>

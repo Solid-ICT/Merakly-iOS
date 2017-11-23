@@ -21,14 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-M7-E0h">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEq-tN-Zus">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3di-Av-tOv">
-                            <rect key="frame" x="0.0" y="84" width="320" height="400"/>
+                            <rect key="frame" x="0.0" y="84" width="320" height="380"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RMP-Wg-gfa">
-                                    <rect key="frame" x="10" y="40" width="300" height="340"/>
+                                    <rect key="frame" x="10" y="40" width="300" height="263"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Aqq-x8-OiT">
                                         <size key="itemSize" width="0.0" height="0.0"/>
@@ -47,18 +51,27 @@
                                         <constraint firstAttribute="height" constant="30" id="J2b-Qo-Wlt"/>
                                         <constraint firstAttribute="width" constant="30" id="nJL-Sj-rug"/>
                                     </constraints>
-                                    <state key="normal" image="close.png"/>
+                                    <state key="normal" image="kapat.png"/>
                                     <connections>
                                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="rBj-jX-4CV"/>
                                     </connections>
                                 </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_popup.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-ru-e2p">
+                                    <rect key="frame" x="0.0" y="311" width="320" height="69"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="69" id="ypg-BB-Te6"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="RMP-Wg-gfa" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" constant="10" id="3cn-Qh-iaa"/>
-                                <constraint firstAttribute="bottom" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="20" id="Ncc-lm-HbB"/>
+                                <constraint firstAttribute="bottom" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="77" id="Ncc-lm-HbB"/>
+                                <constraint firstAttribute="trailing" secondItem="UZV-ru-e2p" secondAttribute="trailing" id="O9G-CG-x0c"/>
                                 <constraint firstItem="mnJ-ED-ri8" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="5" id="OCs-KA-nO5"/>
                                 <constraint firstItem="RMP-Wg-gfa" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="40" id="YOy-38-Fh1"/>
+                                <constraint firstItem="UZV-ru-e2p" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" id="e5B-4t-eU4"/>
+                                <constraint firstAttribute="bottom" secondItem="UZV-ru-e2p" secondAttribute="bottom" id="sbZ-PQ-JMQ"/>
                                 <constraint firstAttribute="trailing" secondItem="RMP-Wg-gfa" secondAttribute="trailing" constant="10" id="uTc-C2-wIP"/>
                                 <constraint firstAttribute="trailing" secondItem="mnJ-ED-ri8" secondAttribute="trailing" constant="11" id="xWV-qD-Wph"/>
                             </constraints>
@@ -67,28 +80,29 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="3di-Av-tOv" secondAttribute="trailing" id="Fng-yY-6bM"/>
-                        <constraint firstAttribute="bottom" secondItem="3di-Av-tOv" secondAttribute="bottom" constant="84" id="V8X-06-hrU"/>
+                        <constraint firstItem="3di-Av-tOv" firstAttribute="top" secondItem="yEq-tN-Zus" secondAttribute="top" constant="84" id="X1T-H0-vN9"/>
+                        <constraint firstAttribute="bottom" secondItem="3di-Av-tOv" secondAttribute="bottom" constant="84" id="e9y-aG-NiR"/>
                         <constraint firstItem="3di-Av-tOv" firstAttribute="leading" secondItem="yEq-tN-Zus" secondAttribute="leading" id="gVU-RF-MFL"/>
-                        <constraint firstItem="3di-Av-tOv" firstAttribute="top" secondItem="yEq-tN-Zus" secondAttribute="top" constant="84" id="xXT-LI-mBx"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="yEq-tN-Zus" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BIL-zE-Cfg"/>
+                <constraint firstItem="yEq-tN-Zus" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DhX-fc-jFr"/>
                 <constraint firstItem="yEq-tN-Zus" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dzn-H9-F8V"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GJl-e3-jud"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IQR-vH-w5r"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="MDD-Lw-DfP"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Oyh-XT-7ww"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SGd-lX-ewH"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kuq-I0-kuR"/>
-                <constraint firstItem="yEq-tN-Zus" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tqe-J1-OHm"/>
+                <constraint firstItem="Xp9-M7-E0h" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FyK-Lk-DlY"/>
+                <constraint firstItem="yEq-tN-Zus" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gki-kk-AF2"/>
+                <constraint firstItem="Xp9-M7-E0h" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="i2E-2k-nF6"/>
+                <constraint firstItem="Xp9-M7-E0h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kCA-oL-n8y"/>
+                <constraint firstItem="Xp9-M7-E0h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rIp-Zp-aIC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="30" y="43"/>
         </view>
     </objects>
     <resources>
-        <image name="close.png" width="16" height="16"/>
+        <image name="adam_popup.png" width="326" height="66"/>
+        <image name="kapat.png" width="12" height="12"/>
     </resources>
 </document>

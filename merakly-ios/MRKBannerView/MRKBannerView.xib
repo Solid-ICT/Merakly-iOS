@@ -57,36 +57,46 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-z6-Jmh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-sH-2AT">
-                            <rect key="frame" x="8" y="15" width="304" height="20.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QPG-sR-bfB">
-                            <rect key="frame" x="10" y="53.5" width="300" height="29"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-rq-9Bc">
+                            <rect key="frame" x="0.0" y="49" width="320" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="2PC-ge-fXs"/>
+                            </constraints>
+                        </imageView>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="QPG-sR-bfB">
+                            <rect key="frame" x="53" y="51" width="241" height="29"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="28" id="H5I-eP-DZa"/>
+                                <constraint firstAttribute="height" constant="28" id="F9L-Wf-nhX"/>
                             </constraints>
                             <segments>
                                 <segment title="First"/>
                                 <segment title="Second"/>
                             </segments>
-                            <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="segmentedControlValueDidChange:" destination="-1" eventType="valueChanged" id="MOY-JM-Weg"/>
                             </connections>
                         </segmentedControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-sH-2AT">
+                            <rect key="frame" x="53" y="15" width="241" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Je8-sH-2AT" secondAttribute="trailing" constant="8" id="0DZ-E8-rne"/>
-                        <constraint firstAttribute="trailing" secondItem="QPG-sR-bfB" secondAttribute="trailing" constant="10" id="34a-7e-2Ur"/>
-                        <constraint firstItem="Je8-sH-2AT" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="8" id="5vx-A2-u48"/>
+                        <constraint firstAttribute="trailing" secondItem="Je8-sH-2AT" secondAttribute="trailing" constant="26" id="0DZ-E8-rne"/>
+                        <constraint firstItem="Je8-sH-2AT" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="53" id="5vx-A2-u48"/>
+                        <constraint firstAttribute="bottom" secondItem="O1u-rq-9Bc" secondAttribute="bottom" id="94S-Lo-Gue"/>
                         <constraint firstItem="Je8-sH-2AT" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" constant="15" id="Cgd-td-2Bn"/>
-                        <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="Je8-sH-2AT" secondAttribute="bottom" constant="18" id="FUI-sq-2sk"/>
-                        <constraint firstItem="QPG-sR-bfB" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="10" id="xuF-LV-ZYv"/>
+                        <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="Je8-sH-2AT" secondAttribute="bottom" constant="15" id="FUI-sq-2sk"/>
+                        <constraint firstItem="O1u-rq-9Bc" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" id="Upk-PP-bP6"/>
+                        <constraint firstAttribute="trailing" secondItem="O1u-rq-9Bc" secondAttribute="trailing" id="V2I-yK-Iky"/>
+                        <constraint firstAttribute="bottom" secondItem="QPG-sR-bfB" secondAttribute="bottom" constant="21" id="gTl-Hy-jEc"/>
+                        <constraint firstItem="QPG-sR-bfB" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="53" id="ttT-7b-hNL"/>
+                        <constraint firstAttribute="trailing" secondItem="QPG-sR-bfB" secondAttribute="trailing" constant="26" id="whN-4t-cYy"/>
                     </constraints>
                 </view>
             </subviews>
@@ -105,7 +115,10 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="70" y="-62"/>
+            <point key="canvasLocation" x="-376" y="3"/>
         </view>
     </objects>
+    <resources>
+        <image name="adam_banner.png" width="320" height="51"/>
+    </resources>
 </document>
