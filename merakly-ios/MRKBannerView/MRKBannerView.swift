@@ -84,14 +84,18 @@ class MRKBannerView: UIView {
         let font = UIFont.boldSystemFont(ofSize: 15)
         answersSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
         
-        getBannerServiceMethod()
-                
     }
     
     //MARK: didMoveToWindow
 
     override func didMoveToWindow() {
+        
+        MRKAPIRouter.identifierBase64DidChangeClosure = {
+            self.getBannerServiceMethod()
+        }
+        
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        
     }
 
     
@@ -107,6 +111,8 @@ class MRKBannerView: UIView {
 
         self.activityIndicator.stopAnimating()
         self.containerView.isHidden = false
+        
+        postCampaignViewEvent()
         
     }
     
@@ -140,9 +146,7 @@ class MRKBannerView: UIView {
     
     func getBannerServiceMethod() {
         
-        let params = ["applicationId": "1", "deviceId": "123", "osType": "1"]
-        
-        MRKAPIWrapper.getRandomAd(params: params, success: { (campaign) in
+        MRKAPIWrapper.getRandomAd(params: [:], success: { (campaign) in
             
             self.campaign = campaign
             self.loadDataToView(campaign: campaign)
@@ -152,6 +156,19 @@ class MRKBannerView: UIView {
             print("HTTP Response Code: \(String(describing: statusCode))")
         }
 
+    }
+    
+    func postCampaignViewEvent() {
+        
+        let params: [String : Any] = ["campaignOptionId": campaign.campaignId]
+        
+        MRKAPIWrapper.postCampaignViewEvent(params: params, success: { (response) in
+            
+        }) { (err, statusCode) in
+            print(err.localizedDescription)
+            print("HTTP Response Code: \(String(describing: statusCode))")
+        }
+        
     }
     
     func postCampaignOptionClickEvent(withCampaignOption clickedOption: MRKCampaignOption) {

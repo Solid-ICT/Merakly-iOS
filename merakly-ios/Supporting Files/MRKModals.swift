@@ -8,6 +8,42 @@
 
 import Foundation
 import Marshal
+import AdSupport
+
+struct MRKIdentifier: Marshaling {
+    
+    var deviceId = ASIdentifierManager.shared().isAdvertisingTrackingEnabled ? ASIdentifierManager.shared().advertisingIdentifier.uuidString : ""
+    var version = 1
+    var osType = 1
+    var osVersion = UIDevice.current.systemVersion
+    var locale = NSLocale.preferredLanguages.first?.components(separatedBy: "-").first ?? "tr"
+    var apiKey: String
+    var secretKey: String
+    var latitude: Double
+    var longitude: Double
+    
+    init(apiKey: String, secretKey: String, latitude: Double, longitude: Double) {
+        self.apiKey = apiKey
+        self.secretKey = secretKey
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
+    func marshaled() -> [String: Any] {
+        return {
+            ["deviceId" : deviceId,
+             "version" : version,
+             "osType" : osType,
+             "osVersion" : osVersion,
+             "locale" : locale,
+             "apiKey" : apiKey,
+             "secretKey" : secretKey,
+             "latitude" : latitude,
+             "longitude" : longitude
+            ]}()
+    }
+    
+}
 
 struct MRKResponse: Unmarshaling {
     
