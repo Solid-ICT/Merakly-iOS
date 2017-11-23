@@ -81,9 +81,6 @@ import SDWebImage
         self.addSubview(contentView)
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        let font = UIFont.boldSystemFont(ofSize: 15)
-        answersSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
-        
     }
     
     //MARK: didMoveToWindow
@@ -97,7 +94,7 @@ import SDWebImage
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         
     }
-    
+
     //MARK: Helper functions
     
     func loadDataToView(campaign: MRKCampaign) {
