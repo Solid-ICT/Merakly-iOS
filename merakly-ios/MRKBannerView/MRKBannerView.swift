@@ -24,9 +24,11 @@ import SDWebImage
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var adContainerView: UIView!
+    @IBOutlet weak var infoContainerView: UIView!
     
     //MARK: UILabel
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     
     //MARK: UISegmentedControl
     @IBOutlet weak var answersSegmentedControl: UISegmentedControl!
@@ -111,7 +113,7 @@ import SDWebImage
         self.activityIndicator.stopAnimating()
         self.containerView.isHidden = false
         
-        delegate?.campaignLoaded!()
+        delegate?.campaignLoaded?()
         
         postCampaignViewEvent()
         
@@ -122,7 +124,7 @@ import SDWebImage
         if let banner = selectedOption.banner {
             //banner gösterilecek
             adImageView.sd_setImage(with: banner.imageUrl, completed: { (_, _, _, _) in
-                self.delegate?.adLoaded!()
+                self.delegate?.adLoaded?()
             })
             containerView.isHidden = true
             adContainerView.isHidden = false
@@ -141,6 +143,18 @@ import SDWebImage
         
     }
     
+    func noCampaignToShow(withMessage message: String) {
+        
+        containerView.isHidden = true
+        adContainerView.isHidden = true
+        infoContainerView.isHidden = false
+        
+        infoLabel.text = message
+        
+        delegate?.noCampaignToLoad?()
+        
+    }
+    
     @objc func updateCounter() {
         totalTime = totalTime + 0.1
     }
@@ -149,11 +163,17 @@ import SDWebImage
     
     func getBannerServiceMethod() {
         
-        MRKAPIWrapper.getRandomAd(params: [:], success: { (campaign) in
+        MRKAPIWrapper.getRandomAd(params: [:], success: { (response) in
             
-            self.campaign = campaign
-            self.loadDataToView(campaign: campaign)
-            
+            if response.succeed {
+                guard let campaignJson = response.data as? [String: Any] else { return }
+                guard let campaign = try? MRKCampaign(object: campaignJson) else { return }
+                self.campaign = campaign
+                self.loadDataToView(campaign: campaign)
+            } else { //no campaign to show
+                self.noCampaignToShow(withMessage: response.message ?? "Şu anda siz uygun bir kampanya yok.")
+            }
+
         }) {(err, statusCode) in
             print(err.localizedDescription)
             print("HTTP Response Code: \(String(describing: statusCode))")

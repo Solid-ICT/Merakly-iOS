@@ -18,6 +18,8 @@
                 <outlet property="answersSegmentedControl" destination="QPG-sR-bfB" id="dbf-TP-r2F"/>
                 <outlet property="containerView" destination="sMD-z6-Jmh" id="RtK-5F-oHa"/>
                 <outlet property="contentView" destination="irG-Kf-jgM" id="4w0-zG-Fg0"/>
+                <outlet property="infoContainerView" destination="ckb-eL-p4W" id="ttM-cg-3Xb"/>
+                <outlet property="infoLabel" destination="aZZ-ou-9ZN" id="nuU-Fw-XLD"/>
                 <outlet property="questionLabel" destination="Je8-sH-2AT" id="hba-c2-ZNB"/>
             </connections>
         </placeholder>
@@ -29,6 +31,24 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2c-PUz">
                     <rect key="frame" x="150" y="40" width="20" height="20"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckb-eL-p4W">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZZ-ou-9ZN">
+                            <rect key="frame" x="8" y="17" width="304" height="65"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="aZZ-ou-9ZN" firstAttribute="leading" secondItem="ckb-eL-p4W" secondAttribute="leading" constant="8" id="1SD-DY-XZJ"/>
+                        <constraint firstAttribute="trailing" secondItem="aZZ-ou-9ZN" secondAttribute="trailing" constant="8" id="455-CJ-Lc8"/>
+                        <constraint firstItem="aZZ-ou-9ZN" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" constant="17" id="KHq-ov-hck"/>
+                        <constraint firstAttribute="bottom" secondItem="aZZ-ou-9ZN" secondAttribute="bottom" constant="18" id="tmw-Rc-xYA"/>
+                    </constraints>
+                </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHc-FF-Ebt">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
@@ -105,17 +125,21 @@
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="5JT-KE-amU"/>
                 <constraint firstItem="sHc-FF-Ebt" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="6hI-pd-9Ec"/>
                 <constraint firstItem="fqf-2c-PUz" firstAttribute="centerX" secondItem="irG-Kf-jgM" secondAttribute="centerX" id="7WJ-NJ-qPQ"/>
+                <constraint firstItem="ckb-eL-p4W" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="EUm-sH-wCC"/>
                 <constraint firstAttribute="trailing" secondItem="sHc-FF-Ebt" secondAttribute="trailing" id="KXQ-e6-QYH"/>
+                <constraint firstAttribute="trailing" secondItem="ckb-eL-p4W" secondAttribute="trailing" id="OJo-ef-YSp"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="bottom" secondItem="irG-Kf-jgM" secondAttribute="bottom" id="Szv-Iq-ZCK"/>
                 <constraint firstItem="sHc-FF-Ebt" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="ViW-49-YZI"/>
                 <constraint firstAttribute="bottom" secondItem="sHc-FF-Ebt" secondAttribute="bottom" id="Vl9-4R-zYT"/>
+                <constraint firstItem="ckb-eL-p4W" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="Wy0-UT-Q2u"/>
                 <constraint firstItem="fqf-2c-PUz" firstAttribute="centerY" secondItem="irG-Kf-jgM" secondAttribute="centerY" id="ahP-Fr-8nX"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="trailing" secondItem="irG-Kf-jgM" secondAttribute="trailing" id="qjR-KW-jRo"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="uFs-oV-KB9"/>
+                <constraint firstAttribute="bottom" secondItem="ckb-eL-p4W" secondAttribute="bottom" id="zzT-RR-Cq0"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-376" y="3"/>
+            <point key="canvasLocation" x="-875" y="-60"/>
         </view>
     </objects>
     <resources>
