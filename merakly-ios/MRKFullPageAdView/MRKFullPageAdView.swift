@@ -30,11 +30,7 @@ class MRKFullPageAdView: UIView {
         self.removeFromSuperview()
         
     }
-    
-    @IBAction func closeButtonTapped(_ sender: Any) {
-        self.removeFromSuperview()
-    }
-    
+
     //MARK: Init functions
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRKSurveyViewController" customModule="merakly_ios" customModuleProvider="target">
             <connections>
                 <outlet property="fullPageAdContainerView" destination="gH7-dW-5kE" id="c2q-ga-Pg0"/>
+                <outlet property="infoContainerView" destination="nV7-6d-Bna" id="b0G-8q-7TI"/>
+                <outlet property="infoLabel" destination="uWE-1D-I8v" id="4N4-oz-w1u"/>
                 <outlet property="surveyCollectionView" destination="RMP-Wg-gfa" id="SFA-nh-wgt"/>
                 <outlet property="surveyContainerView" destination="yEq-tN-Zus" id="4aE-Ii-kPI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,6 +28,39 @@
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-M7-E0h">
                     <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nV7-6d-Bna">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRI-NR-28d">
+                            <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="SeX-5B-4Aw"/>
+                                <constraint firstAttribute="width" constant="30" id="Y34-t8-bQQ"/>
+                            </constraints>
+                            <state key="normal" image="kapat.png"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="oxr-VZ-3sL"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWE-1D-I8v">
+                            <rect key="frame" x="18" y="249" width="284" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="284" id="It2-RE-zUS"/>
+                                <constraint firstAttribute="height" constant="50" id="tSV-IM-7Q4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="uWE-1D-I8v" firstAttribute="centerX" secondItem="nV7-6d-Bna" secondAttribute="centerX" id="90g-Gi-a4g"/>
+                        <constraint firstAttribute="trailing" secondItem="oRI-NR-28d" secondAttribute="trailing" id="DAl-X0-ghd"/>
+                        <constraint firstItem="uWE-1D-I8v" firstAttribute="centerY" secondItem="nV7-6d-Bna" secondAttribute="centerY" id="IMu-5D-SXO"/>
+                        <constraint firstItem="oRI-NR-28d" firstAttribute="top" secondItem="nV7-6d-Bna" secondAttribute="top" id="P7k-dq-TB0"/>
+                    </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-dW-5kE">
                     <rect key="frame" x="0.0" y="20" width="320" height="548"/>
@@ -111,6 +146,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="nV7-6d-Bna" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1uy-YJ-RVP"/>
                 <constraint firstItem="gH7-dW-5kE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="29U-wC-V1D"/>
                 <constraint firstItem="yEq-tN-Zus" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BIL-zE-Cfg"/>
                 <constraint firstItem="yEq-tN-Zus" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DhX-fc-jFr"/>
@@ -119,10 +155,13 @@
                 <constraint firstItem="Xp9-M7-E0h" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FyK-Lk-DlY"/>
                 <constraint firstItem="gH7-dW-5kE" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Q0c-eg-Hmh"/>
                 <constraint firstItem="gH7-dW-5kE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RgU-IZ-uQ8"/>
+                <constraint firstItem="nV7-6d-Bna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sjw-NE-Tkh"/>
+                <constraint firstItem="nV7-6d-Bna" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bOs-Jx-vN7"/>
                 <constraint firstItem="yEq-tN-Zus" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gki-kk-AF2"/>
                 <constraint firstItem="Xp9-M7-E0h" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="i2E-2k-nF6"/>
                 <constraint firstItem="Xp9-M7-E0h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kCA-oL-n8y"/>
                 <constraint firstItem="Xp9-M7-E0h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rIp-Zp-aIC"/>
+                <constraint firstItem="nV7-6d-Bna" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uSK-zx-17g"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="30" y="43"/>

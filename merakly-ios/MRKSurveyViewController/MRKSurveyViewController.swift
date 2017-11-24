@@ -13,6 +13,8 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet var surveyCollectionView: UICollectionView!
     @IBOutlet weak var fullPageAdContainerView: UIView!
     @IBOutlet weak var surveyContainerView: UIView!
+    @IBOutlet weak var infoContainerView: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var survey: MRKSurvey!
     var campaignId: Int!
@@ -23,6 +25,7 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         delegate?.surveyCanceled?()
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,15 +71,23 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func surveyEndend() {
         delegate?.surveyEnded?()
-        self.dismiss(animated: true) {
+        
+        if let banner = self.survey.banner {
             let fullPageAdView = MRKFullPageAdView(frame: CGRect(x: 0, y: 0, width: self.fullPageAdContainerView.frame.size.width, height: self.fullPageAdContainerView.frame.size.height))
-            fullPageAdView.banner = self.survey.banner
+            fullPageAdView.banner = banner
             fullPageAdView.campaignId = self.campaignId
             fullPageAdView.surveyId = self.survey.surveyId
-            self.fullPageAdContainerView.addSubview(fullPageAdView)
+            self.fullPageAdContainerView.insertSubview(fullPageAdView, at: 0)
             self.fullPageAdContainerView.setViewWithAnimation(hidden: false)
             self.surveyContainerView.setViewWithAnimation(hidden: true)
+            self.infoContainerView.setViewWithAnimation(hidden: true)
+        } else {
+            self.infoLabel.text = "Anketimize katılım gösterdiğiniz için teşekkürler!"
+            self.fullPageAdContainerView.setViewWithAnimation(hidden: true)
+            self.surveyContainerView.setViewWithAnimation(hidden: true)
+            self.infoContainerView.setViewWithAnimation(hidden: false)
         }
+        
     }
     
     //MARK: API calls

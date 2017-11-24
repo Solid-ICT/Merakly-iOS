@@ -116,14 +116,14 @@ struct MRKSurvey: Unmarshaling {
     
     var surveyId: Int
     var questions: [MRKSurveyQuestion]
-    var banner: MRKBanner
+    var banner: MRKBanner?
     
     init(object: MarshaledObject) throws {
         
         surveyId = try object.value(for: "id")
         questions = try object.value(for: "questions", discardingErrors: true)
         banner = try object.value(for: "banner")
-        
+
     }
     
 }

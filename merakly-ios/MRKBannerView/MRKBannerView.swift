@@ -53,7 +53,7 @@ import SDWebImage
         } else {
             containerView.setViewWithAnimation(hidden: true)
             infoContainerView.setViewWithAnimation(hidden: false)
-            infoLabel.text = "Teşekkürler."
+            infoLabel.text = "Cevap verdiğiniz için teşekkürler."
         }
         
     }
@@ -170,7 +170,7 @@ import SDWebImage
             surveyVC.modalTransitionStyle = .crossDissolve
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
         }else {
-            noCampaignToShow(withMessage: "Teşekkürler.")
+            noCampaignToShow(withMessage: "Cevap verdiğiniz için teşekkürler.")
         }
         
     }
