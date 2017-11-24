@@ -22,9 +22,13 @@ class MRKFullPageAdView: UIView {
     var surveyId: Int!
     
     @IBAction func adButtonTapped(_ sender: Any) {
+        
         postFullPageBannerClickEvent(bannerId: banner.bannerId, surveyId: surveyId, campaignId: campaignId)
-        UIApplication.shared.openURL(banner.targetUrl)
+        
+        guard let url = banner.targetUrl else { return }
+        UIApplication.shared.openURL(url)
         self.removeFromSuperview()
+        
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {

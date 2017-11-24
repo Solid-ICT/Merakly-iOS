@@ -22,9 +22,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYy-fh-lo7">
                         <rect key="frame" x="10" y="10" width="304" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-D7-KRm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-D7-KRm">
                                 <rect key="frame" x="9" y="9" width="286" height="32"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,7 +51,7 @@
                 <outlet property="containerView" destination="IYy-fh-lo7" id="bNu-sW-kbM"/>
                 <outlet property="optionLabel" destination="Fw4-D7-KRm" id="OVX-VD-9Os"/>
             </connections>
-            <point key="canvasLocation" x="-10" y="38"/>
+            <point key="canvasLocation" x="-162" y="-6"/>
         </tableViewCell>
     </objects>
 </document>

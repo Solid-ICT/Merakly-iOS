@@ -41,3 +41,11 @@ extension UIDevice {
     }
     
 }
+
+extension UIView {
+    func setViewWithAnimation(hidden: Bool) {
+        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.isHidden = hidden
+        }, completion: nil)
+    }
+}

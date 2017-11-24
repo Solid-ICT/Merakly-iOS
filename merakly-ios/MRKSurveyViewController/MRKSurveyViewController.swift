@@ -11,6 +11,8 @@ import UIKit
 class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MRKSurveyCollectionViewCellDelegate {
     
     @IBOutlet var surveyCollectionView: UICollectionView!
+    @IBOutlet weak var fullPageAdContainerView: UIView!
+    @IBOutlet weak var surveyContainerView: UIView!
     
     var survey: MRKSurvey!
     var campaignId: Int!
@@ -67,11 +69,13 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
     func surveyEndend() {
         delegate?.surveyEnded?()
         self.dismiss(animated: true) {
-            let fullPageAdView = MRKFullPageAdView(frame: CGRect(x: 0, y: 0, width: UIDevice.current.screenSize.width, height: UIDevice.current.screenSize.height))
+            let fullPageAdView = MRKFullPageAdView(frame: CGRect(x: 0, y: 0, width: self.fullPageAdContainerView.frame.size.width, height: self.fullPageAdContainerView.frame.size.height))
             fullPageAdView.banner = self.survey.banner
             fullPageAdView.campaignId = self.campaignId
             fullPageAdView.surveyId = self.survey.surveyId
-            UIApplication.shared.keyWindow?.addSubview(fullPageAdView)
+            self.fullPageAdContainerView.addSubview(fullPageAdView)
+            self.fullPageAdContainerView.setViewWithAnimation(hidden: false)
+            self.surveyContainerView.setViewWithAnimation(hidden: true)
         }
     }
     

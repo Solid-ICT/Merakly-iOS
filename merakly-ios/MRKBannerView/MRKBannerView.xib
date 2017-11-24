@@ -34,18 +34,27 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckb-eL-p4W">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="dXy-tq-47s">
+                            <rect key="frame" x="0.0" y="49" width="320" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="Fx0-d4-Q2l"/>
+                            </constraints>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZZ-ou-9ZN">
                             <rect key="frame" x="8" y="17" width="304" height="65"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="aZZ-ou-9ZN" firstAttribute="leading" secondItem="ckb-eL-p4W" secondAttribute="leading" constant="8" id="1SD-DY-XZJ"/>
                         <constraint firstAttribute="trailing" secondItem="aZZ-ou-9ZN" secondAttribute="trailing" constant="8" id="455-CJ-Lc8"/>
+                        <constraint firstItem="dXy-tq-47s" firstAttribute="leading" secondItem="ckb-eL-p4W" secondAttribute="leading" id="IZc-rZ-Fos"/>
                         <constraint firstItem="aZZ-ou-9ZN" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" constant="17" id="KHq-ov-hck"/>
+                        <constraint firstAttribute="trailing" secondItem="dXy-tq-47s" secondAttribute="trailing" id="L2z-eC-IGa"/>
+                        <constraint firstAttribute="bottom" secondItem="dXy-tq-47s" secondAttribute="bottom" id="ho3-bf-Hmq"/>
                         <constraint firstAttribute="bottom" secondItem="aZZ-ou-9ZN" secondAttribute="bottom" constant="18" id="tmw-Rc-xYA"/>
                     </constraints>
                 </view>
@@ -84,7 +93,7 @@
                             </constraints>
                         </imageView>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="QPG-sR-bfB">
-                            <rect key="frame" x="53" y="51" width="241" height="29"/>
+                            <rect key="frame" x="53" y="58" width="241" height="29"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="F9L-Wf-nhX"/>
@@ -98,9 +107,9 @@
                                 <action selector="segmentedControlValueDidChange:" destination="-1" eventType="valueChanged" id="MOY-JM-Weg"/>
                             </connections>
                         </segmentedControl>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-sH-2AT">
-                            <rect key="frame" x="53" y="15" width="241" height="21"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-sH-2AT">
+                            <rect key="frame" x="53" y="10" width="241" height="40"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -110,21 +119,33 @@
                         <constraint firstAttribute="trailing" secondItem="Je8-sH-2AT" secondAttribute="trailing" constant="26" id="0DZ-E8-rne"/>
                         <constraint firstItem="Je8-sH-2AT" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="53" id="5vx-A2-u48"/>
                         <constraint firstAttribute="bottom" secondItem="O1u-rq-9Bc" secondAttribute="bottom" id="94S-Lo-Gue"/>
-                        <constraint firstItem="Je8-sH-2AT" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" constant="15" id="Cgd-td-2Bn"/>
-                        <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="Je8-sH-2AT" secondAttribute="bottom" constant="15" id="FUI-sq-2sk"/>
+                        <constraint firstItem="Je8-sH-2AT" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" constant="10" id="Cgd-td-2Bn"/>
+                        <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="Je8-sH-2AT" secondAttribute="bottom" constant="8" id="FUI-sq-2sk"/>
                         <constraint firstItem="O1u-rq-9Bc" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" id="Upk-PP-bP6"/>
                         <constraint firstAttribute="trailing" secondItem="O1u-rq-9Bc" secondAttribute="trailing" id="V2I-yK-Iky"/>
-                        <constraint firstAttribute="bottom" secondItem="QPG-sR-bfB" secondAttribute="bottom" constant="21" id="gTl-Hy-jEc"/>
+                        <constraint firstAttribute="bottom" secondItem="QPG-sR-bfB" secondAttribute="bottom" constant="14" id="gTl-Hy-jEc"/>
                         <constraint firstItem="QPG-sR-bfB" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="53" id="ttT-7b-hNL"/>
                         <constraint firstAttribute="trailing" secondItem="QPG-sR-bfB" secondAttribute="trailing" constant="26" id="whN-4t-cYy"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME2-4C-0rh">
+                    <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="7rN-st-Z9B"/>
+                        <constraint firstAttribute="width" constant="30" id="YJQ-gQ-Dw1"/>
+                    </constraints>
+                    <state key="normal" image="kapat.png"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="uRC-i2-Rkz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="5JT-KE-amU"/>
                 <constraint firstItem="sHc-FF-Ebt" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="6hI-pd-9Ec"/>
                 <constraint firstItem="fqf-2c-PUz" firstAttribute="centerX" secondItem="irG-Kf-jgM" secondAttribute="centerX" id="7WJ-NJ-qPQ"/>
+                <constraint firstItem="ME2-4C-0rh" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="Ah2-wu-iUC"/>
                 <constraint firstItem="ckb-eL-p4W" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="EUm-sH-wCC"/>
                 <constraint firstAttribute="trailing" secondItem="sHc-FF-Ebt" secondAttribute="trailing" id="KXQ-e6-QYH"/>
                 <constraint firstAttribute="trailing" secondItem="ckb-eL-p4W" secondAttribute="trailing" id="OJo-ef-YSp"/>
@@ -132,6 +153,7 @@
                 <constraint firstItem="sHc-FF-Ebt" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="ViW-49-YZI"/>
                 <constraint firstAttribute="bottom" secondItem="sHc-FF-Ebt" secondAttribute="bottom" id="Vl9-4R-zYT"/>
                 <constraint firstItem="ckb-eL-p4W" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="Wy0-UT-Q2u"/>
+                <constraint firstAttribute="trailing" secondItem="ME2-4C-0rh" secondAttribute="trailing" id="ZaP-rO-xGA"/>
                 <constraint firstItem="fqf-2c-PUz" firstAttribute="centerY" secondItem="irG-Kf-jgM" secondAttribute="centerY" id="ahP-Fr-8nX"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="trailing" secondItem="irG-Kf-jgM" secondAttribute="trailing" id="qjR-KW-jRo"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="uFs-oV-KB9"/>
@@ -144,5 +166,6 @@
     </objects>
     <resources>
         <image name="adam_banner.png" width="320" height="51"/>
+        <image name="kapat.png" width="12" height="12"/>
     </resources>
 </document>

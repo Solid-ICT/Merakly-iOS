@@ -71,7 +71,7 @@ struct MRKCampaign: Unmarshaling {
         
         campaignId = try object.value(for: "id")
         question = try object.value(for: "question")
-        options = try object.value(for: "options")
+        options = try object.value(for: "options", discardingErrors: true)
 
     }
     
@@ -83,14 +83,15 @@ struct MRKCampaignOption: Unmarshaling {
     var option: String
     var banner: MRKBanner?
     var survey: MRKSurvey?
-    
+
     init(object: MarshaledObject) throws {
         
         campaignOptionId = try object.value(for: "id")
         option = try object.value(for: "option")
-        banner = try? object.value(for: "banner")
-        survey = try? object.value(for: "survey")
-        
+        banner = try object.value(for: "banner")
+        survey = try object.value(for: "survey")
+
+
     }
     
 }
@@ -99,13 +100,13 @@ struct MRKBanner: Unmarshaling {
     
     var bannerId: Int
     var imageUrl: URL
-    var targetUrl: URL
+    var targetUrl: URL?
     
     init(object: MarshaledObject) throws {
         
         bannerId = try object.value(for: "id")
         imageUrl = try object.value(for: "imageUrl")
-        targetUrl = try object.value(for: "targetUrl")
+        targetUrl = try? object.value(for: "targetUrl")
 
     }
     
@@ -120,7 +121,7 @@ struct MRKSurvey: Unmarshaling {
     init(object: MarshaledObject) throws {
         
         surveyId = try object.value(for: "id")
-        questions = try object.value(for: "questions")
+        questions = try object.value(for: "questions", discardingErrors: true)
         banner = try object.value(for: "banner")
         
     }
@@ -137,7 +138,7 @@ struct MRKSurveyQuestion: Unmarshaling {
         
         surveyQuestionId = try object.value(for: "id")
         question = try object.value(for: "question")
-        options = try object.value(for: "options")
+        options = try object.value(for: "options", discardingErrors: true)
         
     }
     

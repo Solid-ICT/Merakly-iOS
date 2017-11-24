@@ -51,10 +51,17 @@ import SDWebImage
         if let url = selectedOption.banner?.targetUrl {
             UIApplication.shared.openURL(url)
         } else {
-            containerView.isHidden = true
-            infoContainerView.isHidden = false
+            containerView.setViewWithAnimation(hidden: true)
+            infoContainerView.setViewWithAnimation(hidden: false)
             infoLabel.text = "Teşekkürler."
         }
+        
+    }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        
+        getBannerServiceMethod()
+        delegate?.reloadButtonTapped?()
         
     }
     
@@ -97,11 +104,27 @@ import SDWebImage
 
     override public func didMoveToWindow() {
         
-        MRKAPIRouter.identifierBase64DidChangeClosure = {
-            self.getBannerServiceMethod()
-        }
+    }
+    
+    override public func willMove(toWindow newWindow: UIWindow?) {
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        if newWindow == nil {
+            //View visible değil
+            
+        } else {
+            //View is visible
+
+            if MRKAPIRouter.identifierBase64.count > 0 {
+                self.getBannerServiceMethod()
+            }else {
+                MRKAPIRouter.identifierBase64DidChangeClosure = {
+                    self.getBannerServiceMethod()
+                }
+            }
+            
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+            
+        }
         
     }
 
@@ -116,7 +139,7 @@ import SDWebImage
         }
 
         self.activityIndicator.stopAnimating()
-        self.containerView.isHidden = false
+        self.containerView.setViewWithAnimation(hidden: false)
         
         delegate?.campaignLoaded?()
         
@@ -131,8 +154,9 @@ import SDWebImage
             adImageView.sd_setImage(with: banner.imageUrl, completed: { (_, _, _, _) in
                 self.delegate?.adLoaded?()
             })
-            containerView.isHidden = true
-            adContainerView.isHidden = false
+            
+            containerView.setViewWithAnimation(hidden: true)
+            adContainerView.setViewWithAnimation(hidden: false)
             
         }else if let survey = selectedOption.survey {
             //anket gösterilecek
@@ -143,17 +167,18 @@ import SDWebImage
             surveyVC.campaignOptionId = selectedOption.campaignOptionId
             surveyVC.delegate = delegate
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
-            
+        }else {
+            noCampaignToShow(withMessage: "Teşekkürler.")
         }
         
     }
     
     func noCampaignToShow(withMessage message: String) {
         
-        containerView.isHidden = true
-        adContainerView.isHidden = true
-        infoContainerView.isHidden = false
-        
+        containerView.setViewWithAnimation(hidden: true)
+        adContainerView.setViewWithAnimation(hidden: true)
+        infoContainerView.setViewWithAnimation(hidden: false)
+
         infoLabel.text = message
         
         delegate?.noCampaignToLoad?()
@@ -172,11 +197,11 @@ import SDWebImage
             
             if response.succeed {
                 guard let campaignJson = response.data as? [String: Any] else { return }
-                guard let campaign = try? MRKCampaign(object: campaignJson) else { return }
+                let campaign = try! MRKCampaign(object: campaignJson)
                 self.campaign = campaign
                 self.loadDataToView(campaign: campaign)
             } else { //no campaign to show
-                self.noCampaignToShow(withMessage: response.message ?? "Şu anda siz uygun bir kampanya yok.")
+                self.noCampaignToShow(withMessage: response.message ?? "Şu anda siz uygun bir kampanya bulunmamaktadır.")
             }
 
         }) {(err, statusCode) in
