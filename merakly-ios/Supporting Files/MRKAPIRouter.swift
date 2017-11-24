@@ -22,6 +22,7 @@ enum MRKAPIRouter: URLRequestConvertible {
 
     case getRandomAd([String: String])
     case postCampaignViewEvent([String: Any]) //campaignId(int)
+    case postCampaignSkipEvent([String: Any]) //campaignId(int)
     case postCampaignOptionClickEvent([String: Any]) //campaignOptionId(int), replyTime(float)
     case postInlineBannerClickEvent([String: Any]) //campaignOptionId(int), bannerId(int)
     case postSurveyOptionClickEvent([String: Any]) //campaignId(int), campaignOptionId(int), surveyOptionId(int)
@@ -32,7 +33,7 @@ enum MRKAPIRouter: URLRequestConvertible {
             switch self {
             case .getRandomAd:
                 return .get
-            case .postCampaignViewEvent, .postCampaignOptionClickEvent, .postInlineBannerClickEvent, .postSurveyOptionClickEvent, .postFullPageBannerClickEvent:
+            case .postCampaignViewEvent, .postCampaignSkipEvent, .postCampaignOptionClickEvent, .postInlineBannerClickEvent, .postSurveyOptionClickEvent, .postFullPageBannerClickEvent:
                 return .post
             }
         }
@@ -42,6 +43,8 @@ enum MRKAPIRouter: URLRequestConvertible {
             case .getRandomAd:
                 return nil
             case .postCampaignViewEvent(let params):
+                return params
+            case .postCampaignSkipEvent(let params):
                 return params
             case .postCampaignOptionClickEvent(let params):
                 return params
@@ -64,6 +67,9 @@ enum MRKAPIRouter: URLRequestConvertible {
                 query = ""
             case .postCampaignViewEvent:
                 relativePath = "/device/action/campaign-view"
+                query = ""
+            case .postCampaignSkipEvent:
+                relativePath = "/device/action/campaign-skip"
                 query = ""
             case .postCampaignOptionClickEvent:
                 relativePath = "/device/action/campaign-option-click"
@@ -122,6 +128,22 @@ class MRKAPIWrapper: NSObject {
     class func postCampaignViewEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
         Alamofire.request(MRKAPIRouter.postCampaignViewEvent(params)).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                let responseObject = try! MRKResponse(object: json)
+                success(responseObject)
+            case .failure(let err):
+                failure(err, response.response?.statusCode)
+            }
+            
+        }
+        
+    }
+    class func postCampaignSkipEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
+        
+        Alamofire.request(MRKAPIRouter.postCampaignSkipEvent(params)).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):

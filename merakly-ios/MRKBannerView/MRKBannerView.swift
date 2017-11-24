@@ -60,8 +60,9 @@ import SDWebImage
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         
+        postCampaignSkipEvent()
         getBannerServiceMethod()
-        delegate?.reloadButtonTapped?()
+        delegate?.campaignSkipped?()
         
     }
     
@@ -166,6 +167,7 @@ import SDWebImage
             surveyVC.campaignId = self.campaign.campaignId
             surveyVC.campaignOptionId = selectedOption.campaignOptionId
             surveyVC.delegate = delegate
+            surveyVC.modalTransitionStyle = .crossDissolve
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
         }else {
             noCampaignToShow(withMessage: "Teşekkürler.")
@@ -214,6 +216,19 @@ import SDWebImage
     func postCampaignViewEvent() {
         
         let params: [String : Any] = ["campaignOptionId": campaign.campaignId]
+        
+        MRKAPIWrapper.postCampaignViewEvent(params: params, success: { (response) in
+            
+        }) { (err, statusCode) in
+            print(err.localizedDescription)
+            print("HTTP Response Code: \(String(describing: statusCode))")
+        }
+        
+    }
+    
+    func postCampaignSkipEvent() {
+        
+        let params: [String : Any] = ["campaignId": campaign.campaignId]
         
         MRKAPIWrapper.postCampaignViewEvent(params: params, success: { (response) in
             
