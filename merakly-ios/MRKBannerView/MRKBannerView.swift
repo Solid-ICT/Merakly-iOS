@@ -48,8 +48,13 @@ import SDWebImage
         let selectedOption = self.campaign.options[answersSegmentedControl.selectedSegmentIndex]
         guard let bannerId = selectedOption.banner?.bannerId else { return }
         postInlineBannerClickEvent(withCampaignOption: selectedOption, bannerId: bannerId)
-        guard let url = selectedOption.banner?.targetUrl else { return }
-        UIApplication.shared.openURL(url)
+        if let url = selectedOption.banner?.targetUrl {
+            UIApplication.shared.openURL(url)
+        } else {
+            containerView.isHidden = true
+            infoContainerView.isHidden = false
+            infoLabel.text = "Teşekkürler."
+        }
         
     }
     
