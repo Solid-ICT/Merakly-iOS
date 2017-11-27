@@ -217,7 +217,7 @@ import SDWebImage
     
     func postCampaignViewEvent() {
         
-        let params: [String : Any] = ["campaignOptionId": campaign.campaignId]
+        let params: [String : Any] = ["campaignId": campaign.campaignId]
         
         MRKAPIWrapper.postCampaignViewEvent(params: params, success: { (response) in
             
@@ -232,7 +232,7 @@ import SDWebImage
         
         let params: [String : Any] = ["campaignId": campaign.campaignId]
         
-        MRKAPIWrapper.postCampaignViewEvent(params: params, success: { (response) in
+        MRKAPIWrapper.postCampaignSkipEvent(params: params, success: { (response) in
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
