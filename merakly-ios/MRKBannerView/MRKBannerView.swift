@@ -169,6 +169,9 @@ import SDWebImage
             surveyVC.campaignId = self.campaign.campaignId
             surveyVC.campaignOptionId = selectedOption.campaignOptionId
             surveyVC.delegate = delegate
+            surveyVC.modalPresentationStyle = .overCurrentContext
+            surveyVC.providesPresentationContextTransitionStyle = true
+            surveyVC.definesPresentationContext = true
             surveyVC.modalTransitionStyle = .crossDissolve
             self.window?.rootViewController?.present(surveyVC, animated: true, completion: nil)
         }else {
