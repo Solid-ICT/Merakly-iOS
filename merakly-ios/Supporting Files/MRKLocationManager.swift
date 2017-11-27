@@ -16,18 +16,18 @@ enum MRKLocationManagerErrors: Int {
     case InvalidLocation
 }
 
-class MRKLocationManager: NSObject, CLLocationManagerDelegate {
+@objc public class MRKLocationManager: NSObject, CLLocationManagerDelegate {
     
     //location manager
-    private var locationManager: CLLocationManager = CLLocationManager()
+    var locationManager: CLLocationManager = CLLocationManager()
     
     //destroy the manager
     
     typealias LocationClosure = ((_ location: CLLocation?, _ error: Error?)->())
-    private var didComplete: LocationClosure?
+    var didComplete: LocationClosure?
     
     //location manager returned, call didcomplete closure
-    private func _didComplete(location: CLLocation?, error: Error?) {
+    @objc public func _didComplete(location: CLLocation?, error: Error?) {
         locationManager.stopUpdatingLocation()
         didComplete?(location, error)
         locationManager.delegate = nil
@@ -35,7 +35,7 @@ class MRKLocationManager: NSObject, CLLocationManagerDelegate {
     
     //location authorization status changed
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    @objc public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse:
             self.locationManager.requestLocation()
@@ -48,11 +48,11 @@ class MRKLocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    @objc public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         _didComplete(location: nil, error: error)
     }
     
-    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    @objc public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             _didComplete(location: location, error: nil)
         }
