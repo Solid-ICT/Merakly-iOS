@@ -60,7 +60,9 @@ import SDWebImage
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         
-        postCampaignSkipEvent()
+        if campaign != nil {
+            postCampaignSkipEvent()
+        }
         getBannerServiceMethod()
         delegate?.campaignSkipped?()
         
