@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRKFullPageAdView" customModule="merakly_ios" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="ueh-zN-nRH" id="ck1-y6-M2O"/>
                 <outlet property="addImageView" destination="LbI-4T-2hk" id="qEy-vi-cfQ"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="7dm-Hn-obo"/>
             </connections>
@@ -30,10 +31,16 @@
                         <action selector="adButtonTapped:" destination="-1" eventType="touchUpInside" id="dtc-qc-zd4"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-zN-nRH">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ueh-zN-nRH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2Mr-hc-Oq9"/>
                 <constraint firstItem="htx-Te-moc" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="7ci-mo-cr8"/>
+                <constraint firstItem="ueh-zN-nRH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AS8-Mx-tYP"/>
+                <constraint firstItem="ueh-zN-nRH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BHq-D6-vT4"/>
                 <constraint firstItem="htx-Te-moc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EG4-2G-Knh"/>
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Fgj-JJ-6TI"/>
                 <constraint firstItem="htx-Te-moc" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="HMn-ZS-Tzo"/>
@@ -41,6 +48,7 @@
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="b5a-2c-Crn"/>
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dBd-ly-IaY"/>
                 <constraint firstItem="LbI-4T-2hk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="dgR-nG-vid"/>
+                <constraint firstItem="ueh-zN-nRH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="l2Z-IK-PVN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

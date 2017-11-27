@@ -12,10 +12,13 @@ class MRKFullPageAdView: UIView {
 
     @IBOutlet weak var addImageView: UIImageView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var banner: MRKBanner! {
         didSet {
-            addImageView.sd_setImage(with: banner.imageUrl, completed: nil)
+            addImageView.sd_setImage(with: banner.imageUrl) { (_, _, _, _) in
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
     var campaignId: Int!
