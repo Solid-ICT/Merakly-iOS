@@ -197,6 +197,8 @@ import SDWebImage
     
     func getBannerServiceMethod() {
         
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         MRKAPIWrapper.getRandomAd(params: [:], success: { (response) in
             
             if response.succeed {
