@@ -59,7 +59,9 @@ class MRKFullPageAdView: UIView {
     
     func postFullPageBannerClickEvent(bannerId: Int, surveyId: Int, campaignId: Int) {
         
-        MRKAPIWrapper.postFullPageBannerClickEvent(params: [:], success: { (response) in
+        let params = ["campaignId": campaignId, "surveyId": surveyId, "bannerId": bannerId]
+        
+        MRKAPIWrapper.postFullPageBannerClickEvent(params: params, success: { (response) in
  
         }) { (err, statusCode) in
             print(err)
