@@ -31,6 +31,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckb-eL-p4W">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZp-22-wkA">
+                            <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="era-xf-q5H"/>
+                                <constraint firstAttribute="height" constant="30" id="pZi-On-AKc"/>
+                            </constraints>
+                            <state key="normal" image="kapat.png"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="tqF-R2-E7G"/>
+                            </connections>
+                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="dXy-tq-47s">
                             <rect key="frame" x="0.0" y="49" width="320" height="51"/>
                             <constraints>
@@ -51,13 +62,26 @@
                         <constraint firstItem="dXy-tq-47s" firstAttribute="leading" secondItem="ckb-eL-p4W" secondAttribute="leading" id="IZc-rZ-Fos"/>
                         <constraint firstItem="aZZ-ou-9ZN" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" constant="17" id="KHq-ov-hck"/>
                         <constraint firstAttribute="trailing" secondItem="dXy-tq-47s" secondAttribute="trailing" id="L2z-eC-IGa"/>
+                        <constraint firstAttribute="trailing" secondItem="RZp-22-wkA" secondAttribute="trailing" id="XWh-Ms-PeE"/>
                         <constraint firstAttribute="bottom" secondItem="dXy-tq-47s" secondAttribute="bottom" id="ho3-bf-Hmq"/>
                         <constraint firstAttribute="bottom" secondItem="aZZ-ou-9ZN" secondAttribute="bottom" constant="18" id="tmw-Rc-xYA"/>
+                        <constraint firstItem="RZp-22-wkA" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" id="wnu-Bx-dkW"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHc-FF-Ebt">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRJ-B3-DAd">
+                            <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="sQR-nM-zBr"/>
+                                <constraint firstAttribute="width" constant="30" id="ukB-dz-klt"/>
+                            </constraints>
+                            <state key="normal" image="ic_cancel.png"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="LQM-Cf-aBd"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cym-Us-MEV">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                             <connections>
@@ -70,12 +94,14 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="NRJ-B3-DAd" secondAttribute="trailing" id="5bN-X6-SI7"/>
                         <constraint firstAttribute="bottom" secondItem="znL-0X-XIO" secondAttribute="bottom" id="LMU-sX-q6P"/>
                         <constraint firstAttribute="bottom" secondItem="Cym-Us-MEV" secondAttribute="bottom" id="OxV-eG-9oe"/>
                         <constraint firstItem="Cym-Us-MEV" firstAttribute="top" secondItem="sHc-FF-Ebt" secondAttribute="top" id="VTr-KQ-Ldb"/>
                         <constraint firstAttribute="trailing" secondItem="Cym-Us-MEV" secondAttribute="trailing" id="Y9t-0A-Pdu"/>
                         <constraint firstAttribute="trailing" secondItem="znL-0X-XIO" secondAttribute="trailing" id="ZQX-rd-tpD"/>
                         <constraint firstItem="Cym-Us-MEV" firstAttribute="leading" secondItem="sHc-FF-Ebt" secondAttribute="leading" id="ja4-IJ-bdk"/>
+                        <constraint firstItem="NRJ-B3-DAd" firstAttribute="top" secondItem="sHc-FF-Ebt" secondAttribute="top" id="ma8-fo-xmU"/>
                         <constraint firstItem="znL-0X-XIO" firstAttribute="leading" secondItem="sHc-FF-Ebt" secondAttribute="leading" id="mbN-ga-7Az"/>
                         <constraint firstItem="znL-0X-XIO" firstAttribute="top" secondItem="sHc-FF-Ebt" secondAttribute="top" id="nJk-2q-IgN"/>
                     </constraints>
@@ -83,6 +109,17 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-z6-Jmh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME2-4C-0rh">
+                            <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="7rN-st-Z9B"/>
+                                <constraint firstAttribute="width" constant="30" id="YJQ-gQ-Dw1"/>
+                            </constraints>
+                            <state key="normal" image="kapat.png"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="uRC-i2-Rkz"/>
+                            </connections>
+                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-rq-9Bc">
                             <rect key="frame" x="0.0" y="49" width="320" height="51"/>
                             <constraints>
@@ -120,22 +157,13 @@
                         <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="Je8-sH-2AT" secondAttribute="bottom" constant="8" id="FUI-sq-2sk"/>
                         <constraint firstItem="O1u-rq-9Bc" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" id="Upk-PP-bP6"/>
                         <constraint firstAttribute="trailing" secondItem="O1u-rq-9Bc" secondAttribute="trailing" id="V2I-yK-Iky"/>
+                        <constraint firstItem="ME2-4C-0rh" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" id="XNW-cC-MOH"/>
+                        <constraint firstAttribute="trailing" secondItem="ME2-4C-0rh" secondAttribute="trailing" id="ZZx-rk-9xA"/>
                         <constraint firstAttribute="bottom" secondItem="QPG-sR-bfB" secondAttribute="bottom" constant="14" id="gTl-Hy-jEc"/>
                         <constraint firstItem="QPG-sR-bfB" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="53" id="ttT-7b-hNL"/>
                         <constraint firstAttribute="trailing" secondItem="QPG-sR-bfB" secondAttribute="trailing" constant="26" id="whN-4t-cYy"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME2-4C-0rh">
-                    <rect key="frame" x="290" y="0.0" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="7rN-st-Z9B"/>
-                        <constraint firstAttribute="width" constant="30" id="YJQ-gQ-Dw1"/>
-                    </constraints>
-                    <state key="normal" image="kapat.png"/>
-                    <connections>
-                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="uRC-i2-Rkz"/>
-                    </connections>
-                </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2c-PUz">
                     <rect key="frame" x="142" y="32" width="37" height="37"/>
                 </activityIndicatorView>
@@ -145,7 +173,6 @@
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="5JT-KE-amU"/>
                 <constraint firstItem="sHc-FF-Ebt" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="6hI-pd-9Ec"/>
                 <constraint firstItem="fqf-2c-PUz" firstAttribute="centerX" secondItem="irG-Kf-jgM" secondAttribute="centerX" id="7WJ-NJ-qPQ"/>
-                <constraint firstItem="ME2-4C-0rh" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="Ah2-wu-iUC"/>
                 <constraint firstItem="ckb-eL-p4W" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="EUm-sH-wCC"/>
                 <constraint firstAttribute="trailing" secondItem="sHc-FF-Ebt" secondAttribute="trailing" id="KXQ-e6-QYH"/>
                 <constraint firstAttribute="trailing" secondItem="ckb-eL-p4W" secondAttribute="trailing" id="OJo-ef-YSp"/>
@@ -153,7 +180,6 @@
                 <constraint firstItem="sHc-FF-Ebt" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="ViW-49-YZI"/>
                 <constraint firstAttribute="bottom" secondItem="sHc-FF-Ebt" secondAttribute="bottom" id="Vl9-4R-zYT"/>
                 <constraint firstItem="ckb-eL-p4W" firstAttribute="top" secondItem="irG-Kf-jgM" secondAttribute="top" id="Wy0-UT-Q2u"/>
-                <constraint firstAttribute="trailing" secondItem="ME2-4C-0rh" secondAttribute="trailing" id="ZaP-rO-xGA"/>
                 <constraint firstItem="fqf-2c-PUz" firstAttribute="centerY" secondItem="irG-Kf-jgM" secondAttribute="centerY" id="ahP-Fr-8nX"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="trailing" secondItem="irG-Kf-jgM" secondAttribute="trailing" id="qjR-KW-jRo"/>
                 <constraint firstItem="sMD-z6-Jmh" firstAttribute="leading" secondItem="irG-Kf-jgM" secondAttribute="leading" id="uFs-oV-KB9"/>
@@ -166,6 +192,7 @@
     </objects>
     <resources>
         <image name="adam_banner.png" width="320" height="51"/>
+        <image name="ic_cancel.png" width="21" height="21"/>
         <image name="kapat.png" width="12" height="12"/>
     </resources>
 </document>
