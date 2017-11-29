@@ -164,7 +164,7 @@
                         <constraint firstAttribute="trailing" secondItem="QPG-sR-bfB" secondAttribute="trailing" constant="26" id="whN-4t-cYy"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2c-PUz">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2c-PUz">
                     <rect key="frame" x="142" y="32" width="37" height="37"/>
                 </activityIndicatorView>
             </subviews>

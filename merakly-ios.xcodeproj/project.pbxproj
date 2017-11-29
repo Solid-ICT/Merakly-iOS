@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24C4CA86B531DCB827CC9137 /* Pods_merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */; };
+		42A973CB53A641A6033FE0DD /* Pods_merakly_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB12CE2D7167DC8939B39B6 /* Pods_merakly_ios.framework */; };
 		4A4707501FC6B5BA005FB820 /* geri@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4707401FC6B5B9005FB820 /* geri@3x.png */; };
 		4A4707511FC6B5BA005FB820 /* kapat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4707411FC6B5B9005FB820 /* kapat@2x.png */; };
 		4A4707521FC6B5BA005FB820 /* geri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4707421FC6B5BA005FB820 /* geri.png */; };
@@ -43,7 +43,7 @@
 		4ADFCBCA1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */; };
 		4ADFCBCB1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */; };
 		4AE5B5A11FC71C6D003CFB54 /* MRKDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5B5A01FC71C6D003CFB54 /* MRKDelegates.swift */; };
-		5A715FC6708A3A6C78B4298D /* Pods_merakly_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */; };
+		79164DE8837A33613FC63DEB /* Pods_merakly_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CB8664E276127041C260AC /* Pods_merakly_iosTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		05C109F2ABD3258A9F7F6F33 /* Pods-merakly-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A4707401FC6B5B9005FB820 /* geri@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "geri@3x.png"; sourceTree = "<group>"; };
 		4A4707411FC6B5B9005FB820 /* kapat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kapat@2x.png"; sourceTree = "<group>"; };
 		4A4707421FC6B5BA005FB820 /* geri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = geri.png; sourceTree = "<group>"; };
@@ -96,11 +96,11 @@
 		4ADFCBC81FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKSurveyQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4ADFCBC91FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRKSurveyQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		4AE5B5A01FC71C6D003CFB54 /* MRKDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKDelegates.swift; sourceTree = "<group>"; };
-		4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.release.xcconfig"; sourceTree = "<group>"; };
-		7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.release.xcconfig"; sourceTree = "<group>"; };
-		89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1C52D23651AF849A521AA07 /* Pods-merakly-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CB8664E276127041C260AC /* Pods_merakly_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8C0CEF3AA7B19B7281D252 /* Pods-merakly-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FB12CE2D7167DC8939B39B6 /* Pods_merakly_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_merakly_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824CC1B10F6D981EAB1B64CB /* Pods-merakly-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		9ECB8DB4E685460EF8BE79E1 /* Pods-merakly-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merakly-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C4CA86B531DCB827CC9137 /* Pods_merakly_ios.framework in Frameworks */,
+				42A973CB53A641A6033FE0DD /* Pods_merakly_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,13 +117,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8B0C421FB5738700485900 /* merakly_ios.framework in Frameworks */,
-				5A715FC6708A3A6C78B4298D /* Pods_merakly_iosTests.framework in Frameworks */,
+				79164DE8837A33613FC63DEB /* Pods_merakly_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		212D418D82EA3471A9910FE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				824CC1B10F6D981EAB1B64CB /* Pods-merakly-ios.debug.xcconfig */,
+				9ECB8DB4E685460EF8BE79E1 /* Pods-merakly-ios.release.xcconfig */,
+				6D8C0CEF3AA7B19B7281D252 /* Pods-merakly-iosTests.debug.xcconfig */,
+				05C109F2ABD3258A9F7F6F33 /* Pods-merakly-iosTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4A47073F1FC6B5AD005FB820 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +185,8 @@
 				4A8B0C3A1FB5738700485900 /* merakly-ios */,
 				4A8B0C451FB5738700485900 /* merakly-iosTests */,
 				4A8B0C391FB5738700485900 /* Products */,
-				D162B795A43B4FD863A69CBF /* Pods */,
-				697E435ED9268A0725080656 /* Frameworks */,
+				212D418D82EA3471A9910FE5 /* Pods */,
+				C0144A1752D20FCF83A3D519 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,24 +277,13 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		697E435ED9268A0725080656 /* Frameworks */ = {
+		C0144A1752D20FCF83A3D519 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				89709E5639AAA9A05D0D8C49 /* Pods_merakly_ios.framework */,
-				BA337C8EB8D81F596306BBAB /* Pods_merakly_iosTests.framework */,
+				6FB12CE2D7167DC8939B39B6 /* Pods_merakly_ios.framework */,
+				56CB8664E276127041C260AC /* Pods_merakly_iosTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D162B795A43B4FD863A69CBF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B1C52D23651AF849A521AA07 /* Pods-merakly-ios.debug.xcconfig */,
-				4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */,
-				12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */,
-				7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,12 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A8B0C4C1FB5738700485900 /* Build configuration list for PBXNativeTarget "merakly-ios" */;
 			buildPhases = (
-				DF37722AD8604B2053D2E3BD /* [CP] Check Pods Manifest.lock */,
+				B3B58B90139781394C41BC9A /* [CP] Check Pods Manifest.lock */,
 				4A8B0C331FB5738700485900 /* Sources */,
 				4A8B0C341FB5738700485900 /* Frameworks */,
 				4A8B0C351FB5738700485900 /* Headers */,
 				4A8B0C361FB5738700485900 /* Resources */,
-				62127E1AFE2E030E58593BBC /* [CP] Copy Pods Resources */,
+				BEB49874BA2E61C2C3303A1D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,12 +324,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A8B0C4F1FB5738700485900 /* Build configuration list for PBXNativeTarget "merakly-iosTests" */;
 			buildPhases = (
-				2E5E4EA8451ABC0E4CC13204 /* [CP] Check Pods Manifest.lock */,
+				11A52989B746A22B1BFB03A9 /* [CP] Check Pods Manifest.lock */,
 				4A8B0C3D1FB5738700485900 /* Sources */,
 				4A8B0C3E1FB5738700485900 /* Frameworks */,
 				4A8B0C3F1FB5738700485900 /* Resources */,
-				3D76ED49A17AE306906C6201 /* [CP] Embed Pods Frameworks */,
-				230FB5EB8C79164099956A81 /* [CP] Copy Pods Resources */,
+				57E366F8F65B65805DBEF9EA /* [CP] Embed Pods Frameworks */,
+				54E1713D8EB42FD1F977D5BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -418,22 +418,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		230FB5EB8C79164099956A81 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E5E4EA8451ABC0E4CC13204 /* [CP] Check Pods Manifest.lock */ = {
+		11A52989B746A22B1BFB03A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -451,7 +436,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3D76ED49A17AE306906C6201 /* [CP] Embed Pods Frameworks */ = {
+		54E1713D8EB42FD1F977D5BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57E366F8F65B65805DBEF9EA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -473,22 +473,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merakly-iosTests/Pods-merakly-iosTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		62127E1AFE2E030E58593BBC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF37722AD8604B2053D2E3BD /* [CP] Check Pods Manifest.lock */ = {
+		B3B58B90139781394C41BC9A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -504,6 +489,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEB49874BA2E61C2C3303A1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-merakly-ios/Pods-merakly-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -662,7 +662,7 @@
 		};
 		4A8B0C4D1FB5738700485900 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1C52D23651AF849A521AA07 /* Pods-merakly-ios.debug.xcconfig */;
+			baseConfigurationReference = 824CC1B10F6D981EAB1B64CB /* Pods-merakly-ios.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -687,7 +687,7 @@
 		};
 		4A8B0C4E1FB5738700485900 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F84E90399CEB369301C5988 /* Pods-merakly-ios.release.xcconfig */;
+			baseConfigurationReference = 9ECB8DB4E685460EF8BE79E1 /* Pods-merakly-ios.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -711,7 +711,7 @@
 		};
 		4A8B0C501FB5738700485900 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12B72CAF498D3AA2FAF89DEF /* Pods-merakly-iosTests.debug.xcconfig */;
+			baseConfigurationReference = 6D8C0CEF3AA7B19B7281D252 /* Pods-merakly-iosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -727,7 +727,7 @@
 		};
 		4A8B0C511FB5738700485900 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E07E149F9ACDBA76A863ACB /* Pods-merakly-iosTests.release.xcconfig */;
+			baseConfigurationReference = 05C109F2ABD3258A9F7F6F33 /* Pods-merakly-iosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

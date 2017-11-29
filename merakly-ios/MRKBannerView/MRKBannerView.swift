@@ -13,9 +13,16 @@ import SDWebImage
 @objc public class MRKBannerView: UIView {
     
     //MARK: Variables
-    var campaign: MRKCampaign!
+    var campaign: MRKCampaign! {
+        didSet {
+            campaignObjectDidSetClosure?()
+        }
+    }
     var timer: Timer!
     var totalTime: Float = 0.0
+    var campaignObjectDidSetClosure: (()->())?
+    var isVisible: Bool = false
+    var isLoadCampaignCalled: Bool = false
     
     //MARK: Delegate
     public weak var delegate: MeraklyDelegate?
@@ -63,8 +70,11 @@ import SDWebImage
         if campaign != nil {
             postCampaignSkipEvent()
         }
-        getBannerServiceMethod()
         delegate?.campaignSkipped?()
+        
+        if isLoadCampaignCalled {
+            getRandomCampaign()
+        }
         
     }
     
@@ -102,9 +112,13 @@ import SDWebImage
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
     }
-    
-    //MARK: didMoveToWindow
 
+}
+
+//MARK: UIView Delegates
+
+public extension MRKBannerView {
+    
     override public func didMoveToWindow() {
         
     }
@@ -113,40 +127,64 @@ import SDWebImage
         
         if newWindow == nil {
             //View visible değil
-            
+
         } else {
             //View is visible
 
-            if MRKAPIRouter.identifierBase64.count > 0 {
-                self.getBannerServiceMethod()
-            }else {
-                MRKAPIRouter.identifierBase64DidChangeClosure = {
-                    self.getBannerServiceMethod()
-                }
-            }
-            
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-            
+//            if campaign != nil {
+//                self.loadCampaign()
+//            }
+
         }
         
     }
-
-    //MARK: Helper functions
     
-    func loadDataToView(campaign: MRKCampaign) {
-        
-        questionLabel.text = campaign.question
-        answersSegmentedControl.removeAllSegments()
-        for (index, option) in campaign.options.enumerated() {
-            answersSegmentedControl.insertSegment(withTitle: option.option, at: index, animated: false)
-        }
+}
 
-        self.activityIndicator.stopAnimating()
-        self.containerView.setViewWithAnimation(hidden: false)
+public extension MRKBannerView {
+    
+    public func loadCampaign() {
         
-        delegate?.campaignLoaded?()
+        activityIndicator.startAnimating()
+        isLoadCampaignCalled = true
+        loadDataToView()
         
-        postCampaignViewEvent()
+    }
+ 
+}
+
+//MARK: Helper functions
+
+private extension MRKBannerView {
+    
+    func loadDataToView() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+
+        if MRKAPIRouter.identifierBase64.count > 0 {
+            self.getRandomCampaign()
+        }else {
+            MRKAPIRouter.identifierBase64DidChangeClosure = {
+                self.getRandomCampaign()
+            }
+        }
+        
+        campaignObjectDidSetClosure = {
+            
+            self.questionLabel.text = self.campaign.question
+            self.answersSegmentedControl.removeAllSegments()
+            for (index, option) in self.campaign.options.enumerated() {
+                self.answersSegmentedControl.insertSegment(withTitle: option.option, at: index, animated: false)
+            }
+            
+            self.activityIndicator.stopAnimating()
+            self.containerView.setViewWithAnimation(hidden: false)
+            
+            self.delegate?.campaignLoaded?()
+            
+            self.postCampaignViewEvent()
+            
+        }
         
     }
     
@@ -181,7 +219,7 @@ import SDWebImage
         containerView.setViewWithAnimation(hidden: true)
         adContainerView.setViewWithAnimation(hidden: true)
         infoContainerView.setViewWithAnimation(hidden: false)
-
+        
         infoLabel.text = message
         
         delegate?.noCampaignToLoad?()
@@ -202,28 +240,30 @@ import SDWebImage
         totalTime = totalTime + 0.1
     }
     
-    //MARK: API calls
+}
+
+//MARK: API calls
+
+private extension MRKBannerView {
     
-    func getBannerServiceMethod() {
+    func getRandomCampaign() {
         
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
+        print("getRandomCampaign CALLED")
         MRKAPIWrapper.getRandomAd(params: [:], success: { (response) in
             
             if response.succeed {
                 guard let campaignJson = response.data as? [String: Any] else { return }
                 let campaign = try! MRKCampaign(object: campaignJson)
                 self.campaign = campaign
-                self.loadDataToView(campaign: campaign)
             } else { //no campaign to show
                 self.noCampaignToShow(withMessage: response.message ?? "Şu anda siz uygun bir kampanya bulunmamaktadır.")
             }
-
+            
         }) {(err, statusCode) in
             print(err.localizedDescription)
-            print("HTTP Response Code: \(String(describing: statusCode))")
+            print("getRandomCampaign HTTP Response Code: \(String(describing: statusCode))")
         }
-
+        
     }
     
     func postCampaignViewEvent() {
@@ -234,7 +274,7 @@ import SDWebImage
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
-            print("HTTP Response Code: \(String(describing: statusCode))")
+            print("postCampaignViewEvent HTTP Response Code: \(String(describing: statusCode))")
         }
         
     }
@@ -247,7 +287,7 @@ import SDWebImage
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
-            print("HTTP Response Code: \(String(describing: statusCode))")
+            print("postCampaignSkipEvent HTTP Response Code: \(String(describing: statusCode))")
         }
         
     }
@@ -260,9 +300,9 @@ import SDWebImage
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
-            print("HTTP Response Code: \(String(describing: statusCode))")
+            print("postCampaignOptionClickEvent HTTP Response Code: \(String(describing: statusCode))")
         }
-
+        
     }
     
     func postInlineBannerClickEvent(withCampaignOption clickedOption: MRKCampaignOption, bannerId: Int) {
@@ -273,10 +313,13 @@ import SDWebImage
             
         }) { (err, statusCode) in
             print(err.localizedDescription)
-            print("HTTP Response Code: \(String(describing: statusCode))")
+            print("postInlineBannerClickEvent HTTP Response Code: \(String(describing: statusCode))")
         }
         
         
     }
     
 }
+
+
+

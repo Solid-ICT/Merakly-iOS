@@ -18,6 +18,7 @@ enum MRKAPIRouter: URLRequestConvertible {
             }
         }
     }
+    
     static var identifierBase64DidChangeClosure: (()->())?
 
     case getRandomAd([String: String])
