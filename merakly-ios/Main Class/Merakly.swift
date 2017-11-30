@@ -25,18 +25,18 @@
                 
                 identifier = MRKIdentifier(apiKey: apiKey, secretKey: appSecret, latitude: latitude, longitude: longitude)
                 
-                do {
-                    let identifierData = try JSONSerialization.data(withJSONObject: identifier.marshaled(), options: JSONSerialization.WritingOptions.prettyPrinted)
-                    let identifierBase64 = identifierData.base64EncodedString()
-                    MRKAPIRouter.identifierBase64 = identifierBase64
-                } catch {
-                    print("Could not create JSON from identifier")
-                }
-                
             }else {
                 
                 identifier = MRKIdentifier(apiKey: apiKey, secretKey: appSecret, latitude: 0.0, longitude: 0.0)
                 
+            }
+            
+            do {
+                let identifierData = try JSONSerialization.data(withJSONObject: identifier.marshaled(), options: JSONSerialization.WritingOptions.prettyPrinted)
+                let identifierBase64 = identifierData.base64EncodedString()
+                MRKAPIRouter.identifierBase64 = identifierBase64
+            } catch {
+                print("Could not create JSON from identifier")
             }
             
         }

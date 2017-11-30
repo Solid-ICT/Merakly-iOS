@@ -248,7 +248,6 @@ private extension MRKBannerView {
     
     func getRandomCampaign() {
         
-        print("getRandomCampaign CALLED")
         MRKAPIWrapper.getRandomAd(params: [:], success: { (response) in
             
             if response.succeed {
