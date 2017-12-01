@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Merakly"
-  s.version      = "0.0.6.1"
+  s.version      = "0.0.6.2"
   s.summary      = "Shows some cool ads."
 
   # This description is used to generate tags and improve search results.
