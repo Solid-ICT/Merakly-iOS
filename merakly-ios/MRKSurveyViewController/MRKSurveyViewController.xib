@@ -162,7 +162,8 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="BIa-zy-nxm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7bK-tZ-DbY"/>
+                <constraint firstItem="BIa-zy-nxm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" id="7bK-tZ-DbY"/>
+                <constraint firstItem="BIa-zy-nxm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="TvI-GJ-rcu"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UsC-k4-qDC"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xnR-Xr-fSO"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="yVV-Ng-g71"/>
