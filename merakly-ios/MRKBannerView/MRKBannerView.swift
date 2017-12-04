@@ -131,9 +131,9 @@ public extension MRKBannerView {
         } else {
             //View is visible
 
-//            if campaign != nil {
-//                self.loadCampaign()
-//            }
+            if isLoadCampaignCalled {
+                loadDataToView()
+            }
 
         }
         
@@ -146,7 +146,7 @@ public extension MRKBannerView {
     public func loadCampaign() {
         
         activityIndicator.startAnimating()
-        isLoadCampaignCalled = true
+        isLoadCampaignCalled = false
         loadDataToView()
         
     }
@@ -158,6 +158,8 @@ public extension MRKBannerView {
 private extension MRKBannerView {
     
     func loadDataToView() {
+        
+        isLoadCampaignCalled = true
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
 
