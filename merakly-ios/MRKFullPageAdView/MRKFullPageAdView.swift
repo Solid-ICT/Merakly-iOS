@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MRKFullPageAdView: UIView {
 
@@ -28,8 +29,12 @@ class MRKFullPageAdView: UIView {
         
         guard let url = banner.targetUrl else { return }
         postFullPageBannerClickEvent(bannerId: banner.bannerId, surveyId: surveyId, campaignId: campaignId)
-        UIApplication.shared.openURL(url)
-        self.removeFromSuperview()
+        let safariVC = SFSafariViewController(url: url)
+        var topVC = UIApplication.shared.keyWindow?.rootViewController
+        while((topVC!.presentedViewController) != nil){
+            topVC = topVC!.presentedViewController
+        }
+        topVC?.present(safariVC, animated: true, completion: nil)
         
     }
 

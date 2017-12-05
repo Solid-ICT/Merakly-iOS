@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import SafariServices
 
 @objc public class MRKBannerView: UIView {
     
@@ -56,7 +57,8 @@ import SDWebImage
         guard let bannerId = selectedOption.banner?.bannerId else { return }
         postInlineBannerClickEvent(withCampaignOption: selectedOption, bannerId: bannerId)
         if let url = selectedOption.banner?.targetUrl {
-            UIApplication.shared.openURL(url)
+            let safariVC = SFSafariViewController(url: url)
+            self.window?.rootViewController?.present(safariVC, animated: true, completion: nil)
         } else {
             containerView.setViewWithAnimation(hidden: true)
             infoContainerView.setViewWithAnimation(hidden: false)
@@ -133,6 +135,8 @@ public extension MRKBannerView {
 
             if isLoadCampaignCalled {
                 loadDataToView()
+            }else {
+                self.isLoadCampaignCalled = true
             }
 
         }
@@ -158,8 +162,6 @@ public extension MRKBannerView {
 private extension MRKBannerView {
     
     func loadDataToView() {
-        
-        isLoadCampaignCalled = true
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
 
