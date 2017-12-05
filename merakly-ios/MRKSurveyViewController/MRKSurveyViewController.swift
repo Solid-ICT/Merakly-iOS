@@ -15,6 +15,7 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var surveyContainerView: UIView!
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var survey: MRKSurvey!
     var campaignId: Int!
@@ -35,7 +36,11 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         
         delegate?.surveyStarted?()
         
+        pageControl.numberOfPages = survey.questions.count
+        
     }
+    
+    //MARK: MRKSurveyCollectionViewCellDelegate
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -61,7 +66,11 @@ class MRKSurveyViewController: UIViewController, UICollectionViewDelegate, UICol
         return CGSize(width:width , height: height)
     }
     
-    //MARK: MRKSurveyCollectionViewCellDelegate
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.item
+    }
+    
+    //MARK: Helper Functions
     
     func surveyOptionClicked(withSurveyOption surveyOption: MRKSurveyOption) {
         

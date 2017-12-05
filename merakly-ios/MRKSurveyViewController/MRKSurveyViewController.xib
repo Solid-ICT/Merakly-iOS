@@ -15,6 +15,7 @@
                 <outlet property="fullPageAdContainerView" destination="gH7-dW-5kE" id="c2q-ga-Pg0"/>
                 <outlet property="infoContainerView" destination="nV7-6d-Bna" id="b0G-8q-7TI"/>
                 <outlet property="infoLabel" destination="uWE-1D-I8v" id="4N4-oz-w1u"/>
+                <outlet property="pageControl" destination="i64-tb-05i" id="NVG-uQ-rvn"/>
                 <outlet property="surveyCollectionView" destination="RMP-Wg-gfa" id="SFA-nh-wgt"/>
                 <outlet property="surveyContainerView" destination="yEq-tN-Zus" id="4aE-Ii-kPI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -119,6 +120,12 @@
                                                 <constraint firstAttribute="height" constant="69" id="ypg-BB-Te6"/>
                                             </constraints>
                                         </imageView>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i64-tb-05i">
+                                            <rect key="frame" x="141" y="463" width="39" height="37"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="pageIndicatorTintColor" red="0.01176470588" green="0.25882352939999997" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="currentPageIndicatorTintColor" red="0.0" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </pageControl>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -128,9 +135,12 @@
                                         <constraint firstItem="mnJ-ED-ri8" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="5" id="OCs-KA-nO5"/>
                                         <constraint firstItem="RMP-Wg-gfa" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="55" id="YOy-38-Fh1"/>
                                         <constraint firstItem="UZV-ru-e2p" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" id="e5B-4t-eU4"/>
+                                        <constraint firstAttribute="trailing" secondItem="i64-tb-05i" secondAttribute="trailing" constant="140" id="fMD-RE-7Q3"/>
+                                        <constraint firstItem="i64-tb-05i" firstAttribute="top" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="8" id="g5O-PB-ZU1"/>
                                         <constraint firstAttribute="bottom" secondItem="UZV-ru-e2p" secondAttribute="bottom" id="sbZ-PQ-JMQ"/>
                                         <constraint firstAttribute="trailing" secondItem="RMP-Wg-gfa" secondAttribute="trailing" constant="10" id="uTc-C2-wIP"/>
                                         <constraint firstAttribute="trailing" secondItem="mnJ-ED-ri8" secondAttribute="trailing" constant="11" id="xWV-qD-Wph"/>
+                                        <constraint firstItem="i64-tb-05i" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" constant="141" id="xbT-ii-hYW"/>
                                     </constraints>
                                 </view>
                             </subviews>
