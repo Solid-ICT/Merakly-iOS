@@ -194,8 +194,10 @@ private extension MRKBannerView {
         
         if let banner = selectedOption.banner {
             //banner gösterilecek
+            activityIndicator.startAnimating()
             adImageView.sd_setImage(with: banner.imageUrl, completed: { (_, _, _, _) in
                 self.delegate?.adLoaded?()
+                self.activityIndicator.stopAnimating()
             })
             
             containerView.setViewWithAnimation(hidden: true)

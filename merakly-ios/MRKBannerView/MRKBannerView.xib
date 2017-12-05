@@ -71,6 +71,15 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHc-FF-Ebt">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="znL-0X-XIO">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cym-Us-MEV">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                            <connections>
+                                <action selector="adButtonTapped:" destination="-1" eventType="touchUpInside" id="Meb-fh-OJV"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRJ-B3-DAd">
                             <rect key="frame" x="290" y="0.0" width="30" height="30"/>
                             <constraints>
@@ -82,15 +91,6 @@
                                 <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="LQM-Cf-aBd"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cym-Us-MEV">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                            <connections>
-                                <action selector="adButtonTapped:" destination="-1" eventType="touchUpInside" id="Meb-fh-OJV"/>
-                            </connections>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="znL-0X-XIO">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
