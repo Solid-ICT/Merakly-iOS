@@ -11,7 +11,24 @@ import Alamofire
 import SDWebImage
 import SafariServices
 
+public enum CloseOption {
+    case notClosable
+    case closable
+}
+
+@IBDesignable
 @objc public class MRKBannerView: UIView {
+    
+    @IBInspectable
+    public var shouldClose: Bool = false {
+        didSet {
+            if shouldClose {
+                self.isClosable = .closable
+            }else {
+                self.isClosable = .notClosable
+            }
+        }
+    }
     
     //MARK: Variables
     var campaign: MRKCampaign! {
@@ -24,6 +41,7 @@ import SafariServices
     var campaignObjectDidSetClosure: (()->())?
     var isVisible: Bool = false
     var isLoadCampaignCalled: Bool = false
+    var isClosable: CloseOption = .notClosable
     
     //MARK: Delegate
     public weak var delegate: MeraklyDelegate?
@@ -46,6 +64,8 @@ import SafariServices
     
     //MARK: UIButton
     @IBOutlet weak var adButton: UIButton!
+    @IBOutlet weak var closeRefreshButton: UIButton!
+    @IBOutlet weak var infoContainerCloseRefreshButton: UIButton!
     
     //MARK: UIActivityIndicator
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -80,6 +100,25 @@ import SafariServices
         
     }
     
+    @IBAction func closeRefreshButtonTapped(_ sender: Any) {
+        
+        if campaign != nil {
+            postCampaignSkipEvent()
+        }
+        delegate?.campaignSkipped?()
+        
+        switch isClosable {
+        case .closable:
+            delegate?.closeAction?()
+        case .notClosable:
+            delegate?.refreshAction?()
+            if isLoadCampaignCalled {
+                getRandomCampaign()
+            }
+        }
+        
+    }
+    
     @IBAction func segmentedControlValueDidChange(_ sender: Any) {
         
         timer.invalidate()
@@ -97,12 +136,15 @@ import SafariServices
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.commonInit()
     }
-    
-    override public init(frame: CGRect) {
+
+    public init(point: CGPoint, andCloseOption isClosable: CloseOption) {
+        
+        let frame = CGRect(x: point.x, y: point.y, width: UIDevice.current.screenSize.width, height: 100)
         super.init(frame: frame)
+        self.isClosable = isClosable
         self.commonInit()
+
     }
     
     func commonInit() {
@@ -113,6 +155,17 @@ import SafariServices
         self.addSubview(contentView)
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        var image: UIImage?
+        
+        switch isClosable {
+        case .closable:
+            image = UIImage(named: "kapat.png", in: bundle, compatibleWith: nil)
+        case .notClosable:
+            image = UIImage(named: "refresh.png", in: bundle, compatibleWith: nil)
+        }
+        
+        closeRefreshButton.setImage(image, for: .normal)
+        infoContainerCloseRefreshButton.setImage(image, for: .normal)
     }
 
 }
@@ -120,11 +173,7 @@ import SafariServices
 //MARK: UIView Delegates
 
 public extension MRKBannerView {
-    
-    override public func didMoveToWindow() {
-        
-    }
-    
+
     override public func willMove(toWindow newWindow: UIWindow?) {
         
         if newWindow == nil {
@@ -263,6 +312,8 @@ private extension MRKBannerView {
             } else { //no campaign to show
                 self.noCampaignToShow(withMessage: response.message ?? "Şu anda siz uygun bir kampanya bulunmamaktadır.")
             }
+            
+            self.activityIndicator.stopAnimating()
             
         }) {(err, statusCode) in
             print(err.localizedDescription)

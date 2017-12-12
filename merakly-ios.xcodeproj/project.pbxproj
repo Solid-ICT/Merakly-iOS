@@ -22,6 +22,9 @@
 		4A47076B1FC6C196005FB820 /* adam_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4707681FC6C196005FB820 /* adam_banner@3x.png */; };
 		4A4CC3C81FBD904600406528 /* MRKAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */; };
 		4A6896031FC540F700B55A3C /* Merakly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6896021FC540F700B55A3C /* Merakly.swift */; };
+		4A71ADB31FDFC47F000F97F3 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A71ADB01FDFC47E000F97F3 /* refresh.png */; };
+		4A71ADB41FDFC47F000F97F3 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A71ADB11FDFC47F000F97F3 /* refresh@2x.png */; };
+		4A71ADB51FDFC47F000F97F3 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A71ADB21FDFC47F000F97F3 /* refresh@3x.png */; };
 		4A75990E1FBAB35600DC7933 /* MRKModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75990D1FBAB35600DC7933 /* MRKModals.swift */; };
 		4A7CBF7E1FC45B58001D0746 /* MRKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CBF7D1FC45B58001D0746 /* MRKLocationManager.swift */; };
 		4A7CFD951FCC378F000FC887 /* ic_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CFD921FCC378E000FC887 /* ic_cancel@2x.png */; };
@@ -72,6 +75,9 @@
 		4A4707681FC6C196005FB820 /* adam_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adam_banner@3x.png"; sourceTree = "<group>"; };
 		4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKAPIRouter.swift; sourceTree = "<group>"; };
 		4A6896021FC540F700B55A3C /* Merakly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merakly.swift; sourceTree = "<group>"; };
+		4A71ADB01FDFC47E000F97F3 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		4A71ADB11FDFC47F000F97F3 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		4A71ADB21FDFC47F000F97F3 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@3x.png"; sourceTree = "<group>"; };
 		4A75990D1FBAB35600DC7933 /* MRKModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKModals.swift; sourceTree = "<group>"; };
 		4A7CBF7D1FC45B58001D0746 /* MRKLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKLocationManager.swift; sourceTree = "<group>"; };
 		4A7CFD921FCC378E000FC887 /* ic_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_cancel@2x.png"; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 		4A47073F1FC6B5AD005FB820 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4A71ADB01FDFC47E000F97F3 /* refresh.png */,
+				4A71ADB11FDFC47F000F97F3 /* refresh@2x.png */,
+				4A71ADB21FDFC47F000F97F3 /* refresh@3x.png */,
 				4A4707661FC6C195005FB820 /* adam_banner.png */,
 				4A4707671FC6C195005FB820 /* adam_banner@2x.png */,
 				4A4707681FC6C196005FB820 /* adam_banner@3x.png */,
@@ -389,12 +398,14 @@
 				4A4707641FC6C17F005FB820 /* adam_popup@3x.png in Resources */,
 				4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */,
 				4A4707501FC6B5BA005FB820 /* geri@3x.png in Resources */,
+				4A71ADB41FDFC47F000F97F3 /* refresh@2x.png in Resources */,
 				4ADFCBC51FBADCE200859678 /* MRKSurveyCollectionViewCell.xib in Resources */,
 				4A47075D1FC6B5BA005FB820 /* kapat@3x.png in Resources */,
 				4A47075A1FC6B5BA005FB820 /* kapat.png in Resources */,
 				4A7CFD961FCC378F000FC887 /* ic_cancel@3x.png in Resources */,
 				4A47076B1FC6C196005FB820 /* adam_banner@3x.png in Resources */,
 				4A7CFD971FCC378F000FC887 /* ic_cancel.png in Resources */,
+				4A71ADB31FDFC47F000F97F3 /* refresh.png in Resources */,
 				4A47076A1FC6C196005FB820 /* adam_banner@2x.png in Resources */,
 				4A4707591FC6B5BA005FB820 /* geri@2x.png in Resources */,
 				4ADFCBCB1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib in Resources */,
@@ -405,6 +416,7 @@
 				4ABDEA6A1FC308310029BF1C /* MRKFullPageAdView.xib in Resources */,
 				4A4707521FC6B5BA005FB820 /* geri.png in Resources */,
 				4A4707691FC6C196005FB820 /* adam_banner.png in Resources */,
+				4A71ADB51FDFC47F000F97F3 /* refresh@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,8 +16,10 @@
                 <outlet property="adContainerView" destination="sHc-FF-Ebt" id="bfz-gm-rAd"/>
                 <outlet property="adImageView" destination="znL-0X-XIO" id="TKz-Bp-MpR"/>
                 <outlet property="answersSegmentedControl" destination="QPG-sR-bfB" id="dbf-TP-r2F"/>
+                <outlet property="closeRefreshButton" destination="ME2-4C-0rh" id="4j2-cQ-QcG"/>
                 <outlet property="containerView" destination="sMD-z6-Jmh" id="RtK-5F-oHa"/>
                 <outlet property="contentView" destination="irG-Kf-jgM" id="4w0-zG-Fg0"/>
+                <outlet property="infoContainerCloseRefreshButton" destination="RZp-22-wkA" id="goI-0T-MOf"/>
                 <outlet property="infoContainerView" destination="ckb-eL-p4W" id="ttM-cg-3Xb"/>
                 <outlet property="infoLabel" destination="aZZ-ou-9ZN" id="nuU-Fw-XLD"/>
                 <outlet property="questionLabel" destination="Je8-sH-2AT" id="hba-c2-ZNB"/>
@@ -39,7 +41,7 @@
                             </constraints>
                             <state key="normal" image="kapat.png"/>
                             <connections>
-                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="tqF-R2-E7G"/>
+                                <action selector="closeRefreshButtonTapped:" destination="-1" eventType="touchUpInside" id="1Tm-Fl-GOo"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="dXy-tq-47s">
@@ -115,9 +117,8 @@
                                 <constraint firstAttribute="height" constant="30" id="7rN-st-Z9B"/>
                                 <constraint firstAttribute="width" constant="30" id="YJQ-gQ-Dw1"/>
                             </constraints>
-                            <state key="normal" image="kapat.png"/>
                             <connections>
-                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="uRC-i2-Rkz"/>
+                                <action selector="closeRefreshButtonTapped:" destination="-1" eventType="touchUpInside" id="kYT-Rf-69Z"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-rq-9Bc">
