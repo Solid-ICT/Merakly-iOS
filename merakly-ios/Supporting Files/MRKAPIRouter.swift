@@ -28,11 +28,12 @@ enum MRKAPIRouter: URLRequestConvertible {
     case postInlineBannerClickEvent([String: Any]) //campaignOptionId(int), bannerId(int)
     case postSurveyOptionClickEvent([String: Any]) //campaignId(int), campaignOptionId(int), surveyOptionId(int)
     case postFullPageBannerClickEvent([String: Any]) //campaignId(int), surveyId(int), bannerId(int)
+    case updateUserDetails([String: Any?]) //age(int), genderType(Man 0, Woman 1)
 
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
-            case .getRandomAd:
+            case .getRandomAd, .updateUserDetails:
                 return .get
             case .postCampaignViewEvent, .postCampaignSkipEvent, .postCampaignOptionClickEvent, .postInlineBannerClickEvent, .postSurveyOptionClickEvent, .postFullPageBannerClickEvent:
                 return .post
@@ -54,6 +55,8 @@ enum MRKAPIRouter: URLRequestConvertible {
             case .postSurveyOptionClickEvent(let params):
                 return params
             case .postFullPageBannerClickEvent(let params):
+                return params
+            case .updateUserDetails(let params):
                 return params
             }
         }()
@@ -83,6 +86,9 @@ enum MRKAPIRouter: URLRequestConvertible {
                 query = ""
             case .postFullPageBannerClickEvent:
                 relativePath = "/device/action/banner-full-page-click"
+                query = ""
+            case .updateUserDetails:
+                relativePath = "/device/update-details"
                 query = ""
             }
             
@@ -213,6 +219,23 @@ class MRKAPIWrapper: NSObject {
     class func postFullPageBannerClickEvent(params: [String: Any], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
         
         Alamofire.request(MRKAPIRouter.postFullPageBannerClickEvent(params)).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                let responseObject = try! MRKResponse(object: json)
+                success(responseObject)
+            case .failure(let err):
+                failure(err, response.response?.statusCode)
+            }
+            
+        }
+        
+    }
+    
+    class func updateUserDetails(params: [String: Any?], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
+        
+        Alamofire.request(MRKAPIRouter.updateUserDetails(params)).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):

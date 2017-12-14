@@ -45,6 +45,51 @@ struct MRKIdentifier: Marshaling {
     
 }
 
+public struct MRKUserDetail {
+    
+    public enum Gender {
+        case male
+        case female
+    }
+    
+    var age: Int?
+    var gender: Gender?
+    
+    public init(age: Int?, gender: Gender?) {
+        if let age = age {
+            self.age = age
+        }
+        if let gender = gender {
+            self.gender = gender
+        }
+    }
+    
+    public func send() {
+        
+        let genderInt: Int?
+        
+        switch self.gender {
+        case .male?:
+            genderInt = 0
+        case .female?:
+            genderInt = 1
+        case .none:
+            genderInt = nil
+        }
+        
+        let params: [String: Any?] = ["age": age, "gender": genderInt]
+        
+        MRKAPIWrapper.updateUserDetails(params: params, success: { (response) in
+        
+        }) { (err, statusCode) in
+            print(err.localizedDescription)
+            print("updateUserDetails HTTP Response Code: \(String(describing: statusCode))")
+        }
+        
+    }
+    
+}
+
 struct MRKResponse: Unmarshaling {
     
     var succeed: Bool
@@ -90,7 +135,6 @@ struct MRKCampaignOption: Unmarshaling {
         option = try object.value(for: "option")
         banner = try object.value(for: "banner")
         survey = try object.value(for: "survey")
-
 
     }
     
