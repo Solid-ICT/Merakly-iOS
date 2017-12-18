@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 import SafariServices
+import CoreLocation
 
 public enum CloseOption {
     case notClosable
@@ -42,6 +43,7 @@ public enum CloseOption {
     var isVisible: Bool = false
     var isLoadCampaignCalled: Bool = false
     var isClosable: CloseOption = .notClosable
+    var locationManager: CLLocationManager = CLLocationManager()
     
     //MARK: Delegate
     public weak var delegate: MeraklyDelegate?
@@ -69,7 +71,7 @@ public enum CloseOption {
     
     //MARK: UIActivityIndicator
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
     //MARK: IBAction
     @IBAction func adButtonTapped(_ sender: Any) {
         
@@ -198,6 +200,19 @@ public extension MRKBannerView {
     
     public func loadCampaign() {
         
+        locationManager.delegate = self
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+            case .authorizedAlways, .authorizedWhenInUse:
+                self.locationManager.requestLocation()
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+        
         activityIndicator.startAnimating()
         isLoadCampaignCalled = false
         loadDataToView()
@@ -216,10 +231,6 @@ private extension MRKBannerView {
 
         if MRKAPIRouter.identifierBase64.count > 0 {
             self.getRandomCampaign()
-        }else {
-            MRKAPIRouter.identifierBase64DidChangeClosure = {
-                self.getRandomCampaign()
-            }
         }
         
         campaignObjectDidSetClosure = {
@@ -377,5 +388,20 @@ private extension MRKBannerView {
     
 }
 
+extension MRKBannerView: CLLocationManagerDelegate {
+    
+    @objc public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
 
-
+    @objc public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.first {
+            let params: [String: Any] = ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]
+            MRKAPIWrapper.insertDeviceLocation(params: params)
+            self.locationManager.stopUpdatingLocation()
+        }
+ 
+    }
+    
+}

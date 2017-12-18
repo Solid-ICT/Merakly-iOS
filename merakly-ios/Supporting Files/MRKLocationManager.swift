@@ -66,13 +66,15 @@ enum MRKLocationManagerErrors: Int {
         //fire the location manager
         locationManager.delegate = self
         
-        //check for description key and ask permissions
-        if (Bundle.main.object(forInfoDictionaryKey: "NSLocationWhenInUseUsageDescription") != nil) {
-            locationManager.requestWhenInUseAuthorization()
-        } else if (Bundle.main.object(forInfoDictionaryKey: "NSLocationAlwaysUsageDescription") != nil) {
-            locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+            case .authorizedAlways, .authorizedWhenInUse:
+                self.locationManager.requestLocation()
+            }
         } else {
-            fatalError("To use location in iOS8 you need to define either NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription in the app bundle's Info.plist file")
+            print("Location services are not enabled")
         }
         
     }

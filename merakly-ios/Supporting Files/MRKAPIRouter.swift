@@ -11,15 +11,8 @@ import Alamofire
 enum MRKAPIRouter: URLRequestConvertible {
     
     static let baseUrl = "http://merakly.sickthread.com"
-    static var identifierBase64: String = "" {
-        didSet {
-            if oldValue != identifierBase64 {
-                identifierBase64DidChangeClosure?()
-            }
-        }
-    }
-    
-    static var identifierBase64DidChangeClosure: (()->())?
+    static var identifierBase64: String = ""
+
 
     case getRandomAd([String: String])
     case postCampaignViewEvent([String: Any]) //campaignId(int)
@@ -28,14 +21,15 @@ enum MRKAPIRouter: URLRequestConvertible {
     case postInlineBannerClickEvent([String: Any]) //campaignOptionId(int), bannerId(int)
     case postSurveyOptionClickEvent([String: Any]) //campaignId(int), campaignOptionId(int), surveyOptionId(int)
     case postFullPageBannerClickEvent([String: Any]) //campaignId(int), surveyId(int), bannerId(int)
-    case updateUserDetails([String: Any?]) //age(int), genderType(Man 0, Woman 1)
+    case updateUserDetails([String: Any?]) //age(int), genderType(Male 0, Female 1)
+    case insertDeviceLocation([String: Any]) //latitude(Double), longitude(Double)
 
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
-            case .getRandomAd, .updateUserDetails:
+            case .getRandomAd:
                 return .get
-            case .postCampaignViewEvent, .postCampaignSkipEvent, .postCampaignOptionClickEvent, .postInlineBannerClickEvent, .postSurveyOptionClickEvent, .postFullPageBannerClickEvent:
+            case .postCampaignViewEvent, .postCampaignSkipEvent, .postCampaignOptionClickEvent, .postInlineBannerClickEvent, .postSurveyOptionClickEvent, .postFullPageBannerClickEvent, .updateUserDetails, .insertDeviceLocation:
                 return .post
             }
         }
@@ -57,6 +51,8 @@ enum MRKAPIRouter: URLRequestConvertible {
             case .postFullPageBannerClickEvent(let params):
                 return params
             case .updateUserDetails(let params):
+                return params
+            case .insertDeviceLocation(let params):
                 return params
             }
         }()
@@ -88,6 +84,9 @@ enum MRKAPIRouter: URLRequestConvertible {
                 relativePath = "/device/action/banner-full-page-click"
                 query = ""
             case .updateUserDetails:
+                relativePath = "/device/update-details"
+                query = ""
+            case .insertDeviceLocation:
                 relativePath = "/device/update-details"
                 query = ""
             }
@@ -233,17 +232,34 @@ class MRKAPIWrapper: NSObject {
         
     }
     
-    class func updateUserDetails(params: [String: Any?], success:@escaping (MRKResponse) -> Void, failure:@escaping (Error, Int?) -> Void) {
+    class func updateUserDetails(params: [String: Any?]) {
         
         Alamofire.request(MRKAPIRouter.updateUserDetails(params)).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
                 guard let json = value as? [String: Any] else { return }
-                let responseObject = try! MRKResponse(object: json)
-                success(responseObject)
+                _ = try! MRKResponse(object: json)
             case .failure(let err):
-                failure(err, response.response?.statusCode)
+                print("\(err)")
+                print("updateUserDetails: \(String(describing: response.response?.statusCode))")
+            }
+            
+        }
+        
+    }
+    
+    class func insertDeviceLocation(params: [String: Any]) {
+        
+        Alamofire.request(MRKAPIRouter.insertDeviceLocation(params)).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                guard let json = value as? [String: Any] else { return }
+                _ = try! MRKResponse(object: json)
+            case .failure(let err):
+                print("\(err)")
+                print("updateUserDetails: \(String(describing: response.response?.statusCode))")
             }
             
         }

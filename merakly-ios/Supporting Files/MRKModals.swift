@@ -19,14 +19,10 @@ struct MRKIdentifier: Marshaling {
     var locale = NSLocale.preferredLanguages.first?.components(separatedBy: "-").first ?? "tr"
     var apiKey: String
     var secretKey: String
-    var latitude: Double
-    var longitude: Double
     
-    init(apiKey: String, secretKey: String, latitude: Double, longitude: Double) {
+    init(apiKey: String, secretKey: String) {
         self.apiKey = apiKey
         self.secretKey = secretKey
-        self.latitude = latitude
-        self.longitude = longitude
     }
     
     func marshaled() -> [String: Any] {
@@ -37,9 +33,7 @@ struct MRKIdentifier: Marshaling {
              "osVersion" : osVersion,
              "locale" : locale,
              "apiKey" : apiKey,
-             "secretKey" : secretKey,
-             "latitude" : latitude,
-             "longitude" : longitude
+             "secretKey" : secretKey
             ]}()
     }
     
@@ -77,14 +71,9 @@ public struct MRKUserDetail {
             genderInt = nil
         }
         
-        let params: [String: Any?] = ["age": age, "gender": genderInt]
+        let params: [String: Any?] = ["age": age, "genderType": genderInt]
         
-        MRKAPIWrapper.updateUserDetails(params: params, success: { (response) in
-        
-        }) { (err, statusCode) in
-            print(err.localizedDescription)
-            print("updateUserDetails HTTP Response Code: \(String(describing: statusCode))")
-        }
+        MRKAPIWrapper.updateUserDetails(params: params)
         
     }
     
