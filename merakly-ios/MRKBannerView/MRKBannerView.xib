@@ -39,6 +39,7 @@
                                 <constraint firstAttribute="width" constant="30" id="era-xf-q5H"/>
                                 <constraint firstAttribute="height" constant="30" id="pZi-On-AKc"/>
                             </constraints>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <state key="normal" image="kapat.png"/>
                             <connections>
                                 <action selector="closeRefreshButtonTapped:" destination="-1" eventType="touchUpInside" id="1Tm-Fl-GOo"/>
@@ -117,6 +118,7 @@
                                 <constraint firstAttribute="height" constant="30" id="7rN-st-Z9B"/>
                                 <constraint firstAttribute="width" constant="30" id="YJQ-gQ-Dw1"/>
                             </constraints>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <connections>
                                 <action selector="closeRefreshButtonTapped:" destination="-1" eventType="touchUpInside" id="kYT-Rf-69Z"/>
                             </connections>
