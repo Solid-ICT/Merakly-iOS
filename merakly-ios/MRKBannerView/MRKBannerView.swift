@@ -17,7 +17,6 @@ public enum CloseOption {
     case closable
 }
 
-@IBDesignable
 @objc public class MRKBannerView: UIView {
     
     @IBInspectable
@@ -30,6 +29,23 @@ public enum CloseOption {
             }
         }
     }
+    
+    @IBInspectable
+    var backgroundColour: UIColor? {
+        didSet {
+            bannerViewBackgroundColor = backgroundColour ?? .black
+        }
+    }
+    @IBInspectable
+    var textColor: UIColor? {
+        didSet {
+            bannerViewTextColor = textColor ?? .white
+        }
+    }
+    
+    public var bannerViewBackgroundColor: UIColor = .black
+    
+    public var bannerViewTextColor: UIColor = .white
     
     //MARK: Variables
     var campaign: MRKCampaign! {
@@ -63,6 +79,7 @@ public enum CloseOption {
     
     //MARK: UIImageView
     @IBOutlet weak var adImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     //MARK: UIButton
     @IBOutlet weak var adButton: UIButton!
@@ -169,6 +186,17 @@ public enum CloseOption {
         closeRefreshButton.setImage(image, for: .normal)
         infoContainerCloseRefreshButton.setImage(image, for: .normal)
     }
+    
+    func themeBannerView() {
+        backgroundImageView.backgroundColor = bannerViewBackgroundColor
+        containerView.backgroundColor = bannerViewBackgroundColor
+        infoContainerView.backgroundColor = bannerViewBackgroundColor
+        
+        questionLabel.textColor = bannerViewTextColor
+        infoLabel.textColor = bannerViewTextColor
+        answersSegmentedControl.tintColor = bannerViewTextColor
+    }
+
 
 }
 
@@ -177,6 +205,8 @@ public enum CloseOption {
 public extension MRKBannerView {
 
     override public func willMove(toWindow newWindow: UIWindow?) {
+        
+        self.themeBannerView()
         
         if newWindow == nil {
             //View visible değil
@@ -205,7 +235,7 @@ public extension MRKBannerView {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
-                print("No access")
+                print("No access to location services")
             case .authorizedAlways, .authorizedWhenInUse:
                 self.locationManager.requestLocation()
             }
