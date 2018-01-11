@@ -112,11 +112,9 @@ public enum CloseOption {
             postCampaignSkipEvent()
         }
         delegate?.campaignSkipped?()
-        
-        if isLoadCampaignCalled {
-            getRandomCampaign()
-        }
-        
+        getRandomCampaign()
+
+            
     }
     
     @IBAction func closeRefreshButtonTapped(_ sender: Any) {
@@ -131,9 +129,8 @@ public enum CloseOption {
             delegate?.closeAction?()
         case .notClosable:
             delegate?.refreshAction?()
-            if isLoadCampaignCalled {
-                getRandomCampaign()
-            }
+            getRandomCampaign()
+            
         }
         
     }

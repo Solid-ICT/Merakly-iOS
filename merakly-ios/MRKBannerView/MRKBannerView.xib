@@ -41,10 +41,10 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZp-22-wkA">
-                            <rect key="frame" x="295" y="5" width="20" height="20"/>
+                            <rect key="frame" x="290" y="5" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="20" id="era-xf-q5H"/>
-                                <constraint firstAttribute="height" constant="20" id="pZi-On-AKc"/>
+                                <constraint firstAttribute="width" constant="30" id="era-xf-q5H"/>
+                                <constraint firstAttribute="height" constant="30" id="pZi-On-AKc"/>
                             </constraints>
                             <state key="normal" image="kapat.png"/>
                             <connections>
@@ -64,7 +64,7 @@
                         <constraint firstAttribute="trailing" secondItem="aZZ-ou-9ZN" secondAttribute="trailing" constant="8" id="455-CJ-Lc8"/>
                         <constraint firstItem="aZZ-ou-9ZN" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" constant="41" id="KHq-ov-hck"/>
                         <constraint firstItem="LK4-lr-tbB" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" id="RHu-0h-tCc"/>
-                        <constraint firstAttribute="trailing" secondItem="RZp-22-wkA" secondAttribute="trailing" constant="5" id="XWh-Ms-PeE"/>
+                        <constraint firstAttribute="trailing" secondItem="RZp-22-wkA" secondAttribute="trailing" id="XWh-Ms-PeE"/>
                         <constraint firstAttribute="bottom" secondItem="aZZ-ou-9ZN" secondAttribute="bottom" constant="10" id="tmw-Rc-xYA"/>
                         <constraint firstItem="RZp-22-wkA" firstAttribute="top" secondItem="ckb-eL-p4W" secondAttribute="top" constant="5" id="wnu-Bx-dkW"/>
                         <constraint firstItem="LK4-lr-tbB" firstAttribute="leading" secondItem="ckb-eL-p4W" secondAttribute="leading" constant="13" id="yPf-Bo-Yi7"/>
@@ -83,10 +83,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRJ-B3-DAd">
-                            <rect key="frame" x="295" y="5" width="20" height="20"/>
+                            <rect key="frame" x="290" y="5" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="sQR-nM-zBr"/>
-                                <constraint firstAttribute="width" constant="20" id="ukB-dz-klt"/>
+                                <constraint firstAttribute="height" constant="30" id="sQR-nM-zBr"/>
+                                <constraint firstAttribute="width" constant="30" id="ukB-dz-klt"/>
                             </constraints>
                             <state key="normal" image="ic_cancel.png"/>
                             <connections>
@@ -96,7 +96,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="NRJ-B3-DAd" secondAttribute="trailing" constant="5" id="5bN-X6-SI7"/>
+                        <constraint firstAttribute="trailing" secondItem="NRJ-B3-DAd" secondAttribute="trailing" id="5bN-X6-SI7"/>
                         <constraint firstAttribute="bottom" secondItem="znL-0X-XIO" secondAttribute="bottom" id="LMU-sX-q6P"/>
                         <constraint firstAttribute="bottom" secondItem="Cym-Us-MEV" secondAttribute="bottom" id="OxV-eG-9oe"/>
                         <constraint firstItem="Cym-Us-MEV" firstAttribute="top" secondItem="sHc-FF-Ebt" secondAttribute="top" id="VTr-KQ-Ldb"/>
@@ -118,10 +118,10 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME2-4C-0rh">
-                            <rect key="frame" x="295" y="5" width="20" height="20"/>
+                            <rect key="frame" x="290" y="5" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="7rN-st-Z9B"/>
-                                <constraint firstAttribute="width" constant="20" id="YJQ-gQ-Dw1"/>
+                                <constraint firstAttribute="height" constant="30" id="7rN-st-Z9B"/>
+                                <constraint firstAttribute="width" constant="30" id="YJQ-gQ-Dw1"/>
                             </constraints>
                             <connections>
                                 <action selector="closeRefreshButtonTapped:" destination="-1" eventType="touchUpInside" id="kYT-Rf-69Z"/>
@@ -155,10 +155,10 @@
                         <constraint firstItem="Je8-sH-2AT" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" constant="7" id="Cgd-td-2Bn"/>
                         <constraint firstItem="f0s-cW-jHk" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" id="Egx-nA-eKa"/>
                         <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="Je8-sH-2AT" secondAttribute="bottom" constant="8" id="FUI-sq-2sk"/>
-                        <constraint firstItem="ME2-4C-0rh" firstAttribute="leading" secondItem="Je8-sH-2AT" secondAttribute="trailing" constant="15" id="TpF-k5-WNw"/>
+                        <constraint firstItem="ME2-4C-0rh" firstAttribute="leading" secondItem="Je8-sH-2AT" secondAttribute="trailing" constant="10" id="TpF-k5-WNw"/>
                         <constraint firstItem="QPG-sR-bfB" firstAttribute="top" secondItem="f0s-cW-jHk" secondAttribute="bottom" constant="9" id="UGf-hd-ttj"/>
                         <constraint firstItem="ME2-4C-0rh" firstAttribute="top" secondItem="sMD-z6-Jmh" secondAttribute="top" constant="5" id="XNW-cC-MOH"/>
-                        <constraint firstAttribute="trailing" secondItem="ME2-4C-0rh" secondAttribute="trailing" constant="5" id="ZZx-rk-9xA"/>
+                        <constraint firstAttribute="trailing" secondItem="ME2-4C-0rh" secondAttribute="trailing" id="ZZx-rk-9xA"/>
                         <constraint firstAttribute="bottom" secondItem="QPG-sR-bfB" secondAttribute="bottom" constant="8" id="gTl-Hy-jEc"/>
                         <constraint firstItem="f0s-cW-jHk" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="13" id="sQM-6v-raY"/>
                         <constraint firstItem="QPG-sR-bfB" firstAttribute="leading" secondItem="sMD-z6-Jmh" secondAttribute="leading" constant="16" id="ttT-7b-hNL"/>
