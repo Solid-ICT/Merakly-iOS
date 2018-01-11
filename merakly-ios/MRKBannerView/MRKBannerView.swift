@@ -33,19 +33,19 @@ public enum CloseOption {
     @IBInspectable
     var backgroundColour: UIColor? {
         didSet {
-            bannerViewBackgroundColor = backgroundColour ?? .black
+            bannerViewBackgroundColor = backgroundColour ?? UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
         }
     }
     @IBInspectable
     var textColor: UIColor? {
         didSet {
-            bannerViewTextColor = textColor ?? .white
+            bannerViewTextColor = textColor ?? .white //UIColor(red: 171.0/255.0, green: 173.0/255.0, blue: 215.0/255.0, alpha: 1.0)
         }
     }
     
-    public var bannerViewBackgroundColor: UIColor = .black
+    public var bannerViewBackgroundColor: UIColor = UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
     
-    public var bannerViewTextColor: UIColor = .white
+    public var bannerViewTextColor: UIColor = .white //UIColor(red: 171.0/255.0, green: 173.0/255.0, blue: 215.0/255.0, alpha: 1.0)
     
     //MARK: Variables
     var campaign: MRKCampaign! {
@@ -159,7 +159,7 @@ public enum CloseOption {
 
     public init(point: CGPoint, andCloseOption isClosable: CloseOption) {
         
-        let frame = CGRect(x: point.x, y: point.y, width: UIDevice.current.screenSize.width, height: 100)
+        let frame = CGRect(x: point.x, y: point.y, width: UIDevice.current.screenSize.width, height: 90)
         super.init(frame: frame)
         self.isClosable = isClosable
         self.commonInit()
@@ -188,9 +188,9 @@ public enum CloseOption {
     }
     
     func themeBannerView() {
-        backgroundImageView.backgroundColor = bannerViewBackgroundColor
-        containerView.backgroundColor = bannerViewBackgroundColor
-        infoContainerView.backgroundColor = bannerViewBackgroundColor
+//        backgroundImageView.backgroundColor = bannerViewBackgroundColor
+//        containerView.backgroundColor = bannerViewBackgroundColor
+//        infoContainerView.backgroundColor = bannerViewBackgroundColor
         
         questionLabel.textColor = bannerViewTextColor
         infoLabel.textColor = bannerViewTextColor

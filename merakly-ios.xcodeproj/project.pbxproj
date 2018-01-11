@@ -21,6 +21,12 @@
 		4A47076A1FC6C196005FB820 /* adam_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4707671FC6C195005FB820 /* adam_banner@2x.png */; };
 		4A47076B1FC6C196005FB820 /* adam_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4707681FC6C196005FB820 /* adam_banner@3x.png */; };
 		4A4CC3C81FBD904600406528 /* MRKAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */; };
+		4A55EC1A20074C9D00EEAC70 /* alt_banner_kedi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EC1420074C9C00EEAC70 /* alt_banner_kedi@2x.png */; };
+		4A55EC1B20074C9D00EEAC70 /* alt_banner_kedi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EC1520074C9C00EEAC70 /* alt_banner_kedi@3x.png */; };
+		4A55EC1C20074C9D00EEAC70 /* orta_banner_kedi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EC1620074C9C00EEAC70 /* orta_banner_kedi@2x.png */; };
+		4A55EC1D20074C9D00EEAC70 /* orta_banner_kedi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EC1720074C9D00EEAC70 /* orta_banner_kedi@3x.png */; };
+		4A55EC1E20074C9D00EEAC70 /* alt_banner_kedi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EC1820074C9D00EEAC70 /* alt_banner_kedi.png */; };
+		4A55EC1F20074C9D00EEAC70 /* orta_banner_kedi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EC1920074C9D00EEAC70 /* orta_banner_kedi.png */; };
 		4A6896031FC540F700B55A3C /* Merakly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6896021FC540F700B55A3C /* Merakly.swift */; };
 		4A71ADB31FDFC47F000F97F3 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A71ADB01FDFC47E000F97F3 /* refresh.png */; };
 		4A71ADB41FDFC47F000F97F3 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A71ADB11FDFC47F000F97F3 /* refresh@2x.png */; };
@@ -74,6 +80,12 @@
 		4A4707671FC6C195005FB820 /* adam_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adam_banner@2x.png"; sourceTree = "<group>"; };
 		4A4707681FC6C196005FB820 /* adam_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adam_banner@3x.png"; sourceTree = "<group>"; };
 		4A4CC3C71FBD904600406528 /* MRKAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRKAPIRouter.swift; sourceTree = "<group>"; };
+		4A55EC1420074C9C00EEAC70 /* alt_banner_kedi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alt_banner_kedi@2x.png"; sourceTree = "<group>"; };
+		4A55EC1520074C9C00EEAC70 /* alt_banner_kedi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alt_banner_kedi@3x.png"; sourceTree = "<group>"; };
+		4A55EC1620074C9C00EEAC70 /* orta_banner_kedi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orta_banner_kedi@2x.png"; sourceTree = "<group>"; };
+		4A55EC1720074C9D00EEAC70 /* orta_banner_kedi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orta_banner_kedi@3x.png"; sourceTree = "<group>"; };
+		4A55EC1820074C9D00EEAC70 /* alt_banner_kedi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt_banner_kedi.png; sourceTree = "<group>"; };
+		4A55EC1920074C9D00EEAC70 /* orta_banner_kedi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orta_banner_kedi.png; sourceTree = "<group>"; };
 		4A6896021FC540F700B55A3C /* Merakly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merakly.swift; sourceTree = "<group>"; };
 		4A71ADB01FDFC47E000F97F3 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		4A71ADB11FDFC47F000F97F3 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
@@ -144,6 +156,12 @@
 		4A47073F1FC6B5AD005FB820 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4A55EC1820074C9D00EEAC70 /* alt_banner_kedi.png */,
+				4A55EC1420074C9C00EEAC70 /* alt_banner_kedi@2x.png */,
+				4A55EC1520074C9C00EEAC70 /* alt_banner_kedi@3x.png */,
+				4A55EC1920074C9D00EEAC70 /* orta_banner_kedi.png */,
+				4A55EC1620074C9C00EEAC70 /* orta_banner_kedi@2x.png */,
+				4A55EC1720074C9D00EEAC70 /* orta_banner_kedi@3x.png */,
 				4A71ADB01FDFC47E000F97F3 /* refresh.png */,
 				4A71ADB11FDFC47F000F97F3 /* refresh@2x.png */,
 				4A71ADB21FDFC47F000F97F3 /* refresh@3x.png */,
@@ -399,14 +417,19 @@
 				4A8B0C561FB58CA300485900 /* MRKBannerView.xib in Resources */,
 				4A4707501FC6B5BA005FB820 /* geri@3x.png in Resources */,
 				4A71ADB41FDFC47F000F97F3 /* refresh@2x.png in Resources */,
+				4A55EC1A20074C9D00EEAC70 /* alt_banner_kedi@2x.png in Resources */,
 				4ADFCBC51FBADCE200859678 /* MRKSurveyCollectionViewCell.xib in Resources */,
 				4A47075D1FC6B5BA005FB820 /* kapat@3x.png in Resources */,
 				4A47075A1FC6B5BA005FB820 /* kapat.png in Resources */,
+				4A55EC1D20074C9D00EEAC70 /* orta_banner_kedi@3x.png in Resources */,
 				4A7CFD961FCC378F000FC887 /* ic_cancel@3x.png in Resources */,
 				4A47076B1FC6C196005FB820 /* adam_banner@3x.png in Resources */,
+				4A55EC1B20074C9D00EEAC70 /* alt_banner_kedi@3x.png in Resources */,
 				4A7CFD971FCC378F000FC887 /* ic_cancel.png in Resources */,
 				4A71ADB31FDFC47F000F97F3 /* refresh.png in Resources */,
+				4A55EC1F20074C9D00EEAC70 /* orta_banner_kedi.png in Resources */,
 				4A47076A1FC6C196005FB820 /* adam_banner@2x.png in Resources */,
+				4A55EC1C20074C9D00EEAC70 /* orta_banner_kedi@2x.png in Resources */,
 				4A4707591FC6B5BA005FB820 /* geri@2x.png in Resources */,
 				4ADFCBCB1FBAFBC700859678 /* MRKSurveyQuestionTableViewCell.xib in Resources */,
 				4ADFCBC01FBAD51100859678 /* MRKSurveyViewController.xib in Resources */,
@@ -414,6 +437,7 @@
 				4A4707511FC6B5BA005FB820 /* kapat@2x.png in Resources */,
 				4A4707651FC6C17F005FB820 /* adam_popup@2x.png in Resources */,
 				4ABDEA6A1FC308310029BF1C /* MRKFullPageAdView.xib in Resources */,
+				4A55EC1E20074C9D00EEAC70 /* alt_banner_kedi.png in Resources */,
 				4A4707521FC6B5BA005FB820 /* geri.png in Resources */,
 				4A4707691FC6C196005FB820 /* adam_banner.png in Resources */,
 				4A71ADB51FDFC47F000F97F3 /* refresh@3x.png in Resources */,
