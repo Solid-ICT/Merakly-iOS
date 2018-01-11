@@ -12,7 +12,7 @@ import AdSupport
 
 struct MRKIdentifier: Marshaling {
     
-    var deviceId = ASIdentifierManager.shared().isAdvertisingTrackingEnabled ? ASIdentifierManager.shared().advertisingIdentifier.uuidString : ""
+    var deviceId = ASIdentifierManager.shared().isAdvertisingTrackingEnabled ? ASIdentifierManager.shared().advertisingIdentifier.uuidString : UUID().uuidString
     var version = 1
     var osType = 1
     var osVersion = UIDevice.current.systemVersion
