@@ -159,7 +159,7 @@ public enum CloseOption {
 
     public init(point: CGPoint, andCloseOption isClosable: CloseOption) {
         
-        let frame = CGRect(x: point.x, y: point.y, width: UIDevice.current.screenSize.width, height: 90)
+        let frame = CGRect(x: point.x, y: point.y, width: UIDevice.current.screenSize.width, height: 80)
         super.init(frame: frame)
         self.isClosable = isClosable
         self.commonInit()

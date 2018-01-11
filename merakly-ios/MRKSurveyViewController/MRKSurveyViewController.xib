@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,7 +54,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="uWE-1D-I8v" firstAttribute="centerX" secondItem="nV7-6d-Bna" secondAttribute="centerX" id="90g-Gi-a4g"/>
                                 <constraint firstAttribute="trailing" secondItem="oRI-NR-28d" secondAttribute="trailing" constant="11" id="DAl-X0-ghd"/>
@@ -90,7 +90,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RMP-Wg-gfa">
-                                            <rect key="frame" x="10" y="55" width="300" height="400"/>
+                                            <rect key="frame" x="10" y="80" width="300" height="400"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Aqq-x8-OiT">
                                                 <size key="itemSize" width="0.0" height="0.0"/>
@@ -114,30 +114,31 @@
                                                 <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="rBj-jX-4CV"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adam_popup.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-ru-e2p">
-                                            <rect key="frame" x="0.0" y="479" width="320" height="69"/>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i64-tb-05i">
+                                            <rect key="frame" x="141" y="488" width="39" height="37"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="pageIndicatorTintColor" red="0.6705882353" green="0.67843137249999996" blue="0.84313725490000002" alpha="0.70015517979452058" colorSpace="calibratedRGB"/>
+                                            <color key="currentPageIndicatorTintColor" red="0.6705882353" green="0.67843137249999996" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </pageControl>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orta_banner_kedi.png" translatesAutoresizingMaskIntoConstraints="NO" id="eea-Ei-aZR">
+                                            <rect key="frame" x="125" y="10" width="70" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="69" id="ypg-BB-Te6"/>
+                                                <constraint firstAttribute="width" constant="70" id="QxR-XX-mve"/>
+                                                <constraint firstAttribute="height" constant="60" id="gwD-K6-YKr"/>
                                             </constraints>
                                         </imageView>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i64-tb-05i">
-                                            <rect key="frame" x="141" y="463" width="39" height="37"/>
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="pageIndicatorTintColor" red="0.01176470588" green="0.25882352939999997" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="currentPageIndicatorTintColor" red="0.0" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </pageControl>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="RMP-Wg-gfa" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" constant="10" id="3cn-Qh-iaa"/>
-                                        <constraint firstAttribute="bottom" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="93" id="Ncc-lm-HbB"/>
-                                        <constraint firstAttribute="trailing" secondItem="UZV-ru-e2p" secondAttribute="trailing" id="O9G-CG-x0c"/>
+                                        <constraint firstAttribute="trailing" secondItem="eea-Ei-aZR" secondAttribute="trailing" constant="125" id="EbA-YY-C67"/>
+                                        <constraint firstAttribute="bottom" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="68" id="Ncc-lm-HbB"/>
                                         <constraint firstItem="mnJ-ED-ri8" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="5" id="OCs-KA-nO5"/>
-                                        <constraint firstItem="RMP-Wg-gfa" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="55" id="YOy-38-Fh1"/>
-                                        <constraint firstItem="UZV-ru-e2p" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" id="e5B-4t-eU4"/>
+                                        <constraint firstItem="RMP-Wg-gfa" firstAttribute="top" secondItem="eea-Ei-aZR" secondAttribute="bottom" constant="10" id="XQf-ZS-Ccw"/>
+                                        <constraint firstItem="eea-Ei-aZR" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" constant="125" id="cJl-FN-6Sy"/>
                                         <constraint firstAttribute="trailing" secondItem="i64-tb-05i" secondAttribute="trailing" constant="140" id="fMD-RE-7Q3"/>
                                         <constraint firstItem="i64-tb-05i" firstAttribute="top" secondItem="RMP-Wg-gfa" secondAttribute="bottom" constant="8" id="g5O-PB-ZU1"/>
-                                        <constraint firstAttribute="bottom" secondItem="UZV-ru-e2p" secondAttribute="bottom" id="sbZ-PQ-JMQ"/>
+                                        <constraint firstItem="eea-Ei-aZR" firstAttribute="top" secondItem="3di-Av-tOv" secondAttribute="top" constant="10" id="l7A-Zy-p21"/>
                                         <constraint firstAttribute="trailing" secondItem="RMP-Wg-gfa" secondAttribute="trailing" constant="10" id="uTc-C2-wIP"/>
                                         <constraint firstAttribute="trailing" secondItem="mnJ-ED-ri8" secondAttribute="trailing" constant="11" id="xWV-qD-Wph"/>
                                         <constraint firstItem="i64-tb-05i" firstAttribute="leading" secondItem="3di-Av-tOv" secondAttribute="leading" constant="141" id="xbT-ii-hYW"/>
@@ -169,12 +170,23 @@
                         <constraint firstAttribute="bottom" secondItem="nV7-6d-Bna" secondAttribute="bottom" id="s6V-zO-ASK"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2s-hQ-c3V">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="3iC-oC-lAE"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="z2s-hQ-c3V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Xl-S5-2YS"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" id="7bK-tZ-DbY"/>
+                <constraint firstItem="BIa-zy-nxm" firstAttribute="top" secondItem="z2s-hQ-c3V" secondAttribute="bottom" id="9oN-bE-ztU"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="TvI-GJ-rcu"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UsC-k4-qDC"/>
+                <constraint firstItem="z2s-hQ-c3V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eXF-sJ-hlT"/>
+                <constraint firstAttribute="trailing" secondItem="z2s-hQ-c3V" secondAttribute="trailing" id="knU-FH-A7l"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xnR-Xr-fSO"/>
                 <constraint firstItem="BIa-zy-nxm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="yVV-Ng-g71"/>
             </constraints>
@@ -183,8 +195,8 @@
         </view>
     </objects>
     <resources>
-        <image name="adam_popup.png" width="326" height="66"/>
         <image name="ic_cancel.png" width="21" height="21"/>
         <image name="kapat.png" width="12" height="12"/>
+        <image name="orta_banner_kedi.png" width="81" height="52"/>
     </resources>
 </document>

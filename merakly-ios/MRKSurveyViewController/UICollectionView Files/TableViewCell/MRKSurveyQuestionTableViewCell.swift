@@ -21,7 +21,7 @@ class MRKSurveyQuestionTableViewCell: UITableViewCell, Reusable {
     override func layoutSubviews() {
         
         containerView.layer.borderWidth = 1.0
-        containerView.layer.borderColor = UIColor(red: 0.0/255.0, green: 252.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor
+        containerView.layer.borderColor = UIColor(red: 171.0/255.0, green: 173.0/255.0, blue: 215.0/255.0, alpha: 1.0).cgColor
         containerView.layer.cornerRadius = 5.0
         
     }
@@ -32,10 +32,10 @@ class MRKSurveyQuestionTableViewCell: UITableViewCell, Reusable {
         // Configure the view for the selected state
         
         if selected {
-            containerView.backgroundColor = UIColor(red: 0.0/255.0, green: 252.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            containerView.backgroundColor = UIColor(red: 171.0/255.0, green: 173.0/255.0, blue: 215.0/255.0, alpha: 1.0)
             optionLabel.textColor = .black
         } else {
-            containerView.backgroundColor = UIColor(red: 3.0/255.0, green: 66.0/255.0, blue: 72.0/255.0, alpha: 1.0)
+            containerView.backgroundColor = UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
             optionLabel.textColor = .white
         }
         
