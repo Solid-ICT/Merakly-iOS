@@ -31,13 +31,13 @@ public enum CloseOption {
     }
     
     @IBInspectable
-    var backgroundColour: UIColor? {
+    public var backgroundColour: UIColor? {
         didSet {
             bannerViewBackgroundColor = backgroundColour ?? UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
         }
     }
     @IBInspectable
-    var textColor: UIColor? {
+    public var textColor: UIColor? {
         didSet {
             bannerViewTextColor = textColor ?? .white //UIColor(red: 171.0/255.0, green: 173.0/255.0, blue: 215.0/255.0, alpha: 1.0)
         }
